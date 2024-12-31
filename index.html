@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Header with Dropdown</title>
+  <style>
+    /* Importing Playfair Display font */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.5;
+      background-color: #fff;
+    }
+
+    /* Header Styling */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #f7ecd6; /* Light beige */
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    /* Navigation */
+    .nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 5px 10px;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link:hover {
+      color: #ff6c00;
+    }
+
+    .nav-link::after {
+      content: "▼";
+      font-size: 0.7rem;
+      margin-left: 5px;
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-item:hover .nav-link::after {
+      transform: rotate(180deg);
+      color: #ff6c00;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 8px;
+      width: 700px;
+      z-index: 10;
+    }
+
+    .dropdown-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dropdown ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown li {
+      margin: 5px 0;
+    }
+
+    .dropdown li:first-child {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    .nav-item:hover .dropdown {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+
+    /* CTA Buttons */
+    .cta {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .btn {
+      background-color: #ff8c00; /* Orange */
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff6c00;
+    }
+
+    .btn-secondary {
+      background-color: #ffffff;
+      color: #ff8c00;
+      border: 2px solid #ff8c00;
+    }
+
+    .btn-secondary:hover {
+      background-color: #ffe3c0;
+    }
+
+    .locations {
+      margin-left: 20px;
+      font-weight: bold;
+      color: #333;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .locations:hover {
+      color: #ff6c00;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .dropdown {
+        width: 100%;
+        box-shadow: none;
+        position: static;
+      }
+
+      .nav-item:hover .dropdown {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .cta {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 10px;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+
+      .btn-secondary {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+    }
+    .hero {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: unset;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .hero-overlay h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero-overlay p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-overlay .btn {
+      font-size: 1.1rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .dropdown {
+        width: 100%;
+        box-shadow: none;
+        position: static;
+      }
+
+      .nav-item:hover .dropdown {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .cta {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 10px;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+
+      .btn-secondary {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+
+      .hero-overlay h1 {
+        font-size: 2rem;
+      }
+
+      .hero-overlay p {
+        font-size: 1rem;
+      }
+    }
+    .section {
+  background-color: #3c2b1c;
+  color: #fff8ec;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.section .about-btn {
+  background-color: #000;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.section .about-btn:hover {
+  background-color: #444;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.card {
+  background-color: #f7ecd6;
+  border-radius: 15px;
+  width: 220px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.card .card-text {
+  padding: 15px 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.card .arrow {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3c2b1c;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.cta-button {
+  margin-top: 40px;
+}
+
+.cta-button .book-btn {
+  background-color: #000;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cta-button .book-btn:hover {
+  background-color: #444;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .section h1 {
+    font-size: 2rem;
+  }
+
+  .cards-container {
+    gap: 10px;
+  }
+
+  .card {
+    width: 180px;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .cta-button .book-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+.section-ad {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .section-ad h1 {
+        color: #e63946;
+        font-size: 28px;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    .section-ad h2 {
+        color: #888;
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 40px;
+    }
+
+    .grid-ad {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .card-ad {
+        text-align: center;
+    }
+
+    .card-ad img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #eaf6ff;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .card-ad h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .card-ad p {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+    }
+    /* General Section Styling */
+.hot-deals-ad {
+    padding: 2rem;
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+/* Title Styling */
+.deals-title-ad {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Grid Styling */
+.deals-grid-ad {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Card Styling */
+.deal-card-ad {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    position: relative;
+    text-align: left;
+}
+
+/* Image Styling */
+.deal-image-ad {
+    width: 100%;
+    height: auto;
+}
+
+/* Content Styling */
+.deal-content-ad {
+    padding: 1rem;
+}
+.deal-heading-ad {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+.deal-subheading-ad {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+.deal-off-ad {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d9534f;
+    margin-bottom: 1rem;
+}
+.deal-off-ad span {
+    font-size: 1.5rem;
+}
+
+/* Button Styling */
+.deal-button-ad {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.deal-button-ad:hover {
+    background-color: #d9534f;
+}
+
+/* Tag Styling */
+.deal-tag-ad {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #d9534f;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+/* Styling for the How It Works Section */
+
+.how-it-works-ad {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin: 50px 20px;
+}
+
+.how-title-ad {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #e03a3c;
+    margin-bottom: 30px;
+}
+
+.steps-container-ad {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.step-ad {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.step-icon-ad img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.step-number-ad {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #87c6d9;
+    margin: 10px 0;
+}
+
+.step-title-ad {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #3c3c3c;
+    margin: 10px 0;
+}
+
+.step-description-ad {
+    font-size: 0.9rem;
+    color: #7d7d7d;
+    margin: 5px 0;
+}
+/* Testimonial Section Styling */
+.testimonial-section {
+  background-color: #fcebe3;
+  padding: 50px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.testimonial-heading {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.testimonial-subheading {
+  text-align: center;
+  font-size: 1.2em;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.testimonial-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tab-button {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #ffab91;
+  color: #fff;
+  border-color: #ffab91;
+}
+
+.tab-button:hover {
+  background-color: #ffd5c2;
+  border-color: #ffd5c2;
+}
+
+.testimonial-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+
+.testimonial-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.testimonial-text {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.testimonial-name {
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+}
+
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="rlogo.png" alt="Logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-item">
+        <a href="#" class="nav-link">LASER</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Browse by Concerns</li>
+              <li>Acne Scars</li>
+              <li>Aging, Fine Lines & Wrinkles</li>
+              <li>Skin Tanning</li>
+              <li>Hyper-Pigmentation</li>
+              <li>Feature Enhancement</li>
+            </ul>
+          </div>
+          <div class="dropdown-column">
+            <ul>
+              <li>Browse by Treatment</li>
+              <li>UnWrinkle GFC Face</li>
+              <li>Advanced Microneedling</li>
+              <li>Laser Toning</li>
+              <li>Glow Drips (IV Infusion)</li>
+              <li>Threadlift</li>
+            </ul>
+          </div>
+          <div class="dropdown-column">
+            <ul>
+              <li>Medi-Facials & Peels</li>
+              <li>Hydrafacial</li>
+              <li>Carbon Facial</li>
+              <li>Anti Scar Peel</li>
+              <li>Party Peel</li>
+              <li>Under Eye Peel</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">SKIN</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Skin Treatments</li>
+              <li>Hydrafacial</li>
+              <li>Carbon Peel</li>
+              <li>Skin Lightening</li>
+              <li>Anti-Aging Treatments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">HAIR</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Hair Treatments</li>
+              <li>PRP Therapy</li>
+              <li>Laser Hair Removal</li>
+              <li>Hair Transplants</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">BODY</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Body Sculpting</li>
+              <li>CoolSculpting</li>
+              <li>Cellulite Reduction</li>
+              <li>Body Contouring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Extra Links and Buttons -->
+    <div class="cta">
+      <a href="#" class="locations">Our Locations</a>
+      <a href="#" class="btn btn-secondary">Talk to Us</a>
+      <a href="#" class="btn">Book FREE Appointment</a>
+    </div>
+  </header>
+  <section class="hero">
+    <video autoplay muted loop>
+      <source src="rareskinsvid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay">
+      <h1>Your Stunning Hero Title</h1>
+      <p>Subheading text that provides more context and catches attention.</p>
+      <a href="#" class="btn">Learn More</a>
+    </div>
+  </section>
+  <div class="section">
+    <h1>We Deal in Powerful Transformations</h1>
+    <p>We have carefully curated a wide array of dermatology services to effectively target diverse skin concerns, empowering you with the necessary support and treatments to elevate your self-esteem and invigorate your confidence.</p>
+    <a href="#" class="about-btn">About us</a>
+  
+    <div class="cards-container">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/220x280" alt="Laser Hair Removal">
+        <div class="card-text">Laser Hair Removal</div>
+        <div class="arrow">➔</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/220x280" alt="Skin">
+        <div class="card-text">Skin</div>
+        <div class="arrow">➔</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/220x280" alt="Hair">
+        <div class="card-text">Hair</div>
+        <div class="arrow">➔</div>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/220x280" alt="Body">
+        <div class="card-text">Body</div>
+        <div class="arrow">➔</div>
+      </div>
+    </div>
+  
+    <div class="cta-button">
+      <a href="#" class="book-btn">Book Appointment</a>
+    </div>
+  </div>
+  <section class="section-ad">
+    <h1>why makeO (formerly skinnsi) is different?</h1>
+    <h2>6 reasons to try us out</h2>
+    <div class="grid-ad">
+        <div class="card-ad">
+            <img src="icon1.png" alt="Convenient Service">
+            <h3>convenient service</h3>
+            <p>Get our services at the nearest Experience Centre or let us come to your home.</p>
+        </div>
+        <div class="card-ad">
+            <img src="icon2.png" alt="Backed by Experts">
+            <h3>backed by experts</h3>
+            <p>Our products and services are designed and approved by dermats.</p>
+        </div>
+        <div class="card-ad">
+            <img src="icon3.png" alt="Latest Technology">
+            <h3>latest technology</h3>
+            <p>The most advanced in India.</p>
+        </div>
+        <div class="card-ad">
+            <img src="icon4.png" alt="Personalized Care">
+            <h3>personalized care</h3>
+            <p>Designed for you and your skin.</p>
+        </div>
+        <div class="card-ad">
+            <img src="icon5.png" alt="Easy on the Pocket">
+            <h3>easy on the pocket</h3>
+            <p>Enjoy affordable packages and EMI options.</p>
+        </div>
+        <div class="card-ad">
+            <img src="icon6.png" alt="Always Available">
+            <h3>always available</h3>
+            <p>Our team is one call away.</p>
+        </div>
+    </div>
+</section>
+<section class="hot-deals-ad">
+    <h1 class="deals-title-ad">Hot Deals</h1>
+    <div class="deals-grid-ad">
+        <div class="deal-card-ad">
+            <img src="deal1.png" alt="Deal 1" class="deal-image-ad">
+            <div class="deal-content-ad">
+                <h2 class="deal-heading-ad">Slimming Therapies</h2>
+                <p class="deal-subheading-ad">Get Free Consultation</p>
+                <p class="deal-off-ad">UPTO <span>50% OFF</span></p>
+                <button class="deal-button-ad">Claim Now</button>
+            </div>
+            <div class="deal-tag-ad">FREE TRIAL</div>
+        </div>
+        <div class="deal-card-ad">
+            <img src="deal2.png" alt="Deal 2" class="deal-image-ad">
+            <div class="deal-content-ad">
+                <h2 class="deal-heading-ad">Dermat Treatment</h2>
+                <p class="deal-subheading-ad">Get Free Consultation</p>
+                <p class="deal-off-ad">UPTO <span>40% OFF</span></p>
+                <button class="deal-button-ad">Claim Now</button>
+            </div>
+            <div class="deal-tag-ad">BUT 1 GET 1 FREE</div>
+        </div>
+    </div>
+</section>
+<section class="how-it-works-ad">
+    <h1 class="how-title-ad">how makeO (formerly skinnsi) works</h1>
+    <div class="steps-container-ad">
+        <div class="step-ad">
+            <div class="step-icon-ad">
+                <img src="step1.png" alt="Step 1">
+            </div>
+            <h2 class="step-number-ad">01</h2>
+            <h3 class="step-title-ad">self-assessment</h3>
+            <p class="step-description-ad">Answer our medical survey for our experts</p>
+        </div>
+        <div class="step-ad">
+            <div class="step-icon-ad">
+                <img src="step2.png" alt="Step 2">
+            </div>
+            <h2 class="step-number-ad">02</h2>
+            <h3 class="step-title-ad">appointment</h3>
+            <p class="step-description-ad">Book your appointment</p>
+        </div>
+        <div class="step-ad">
+            <div class="step-icon-ad">
+                <img src="step3.png" alt="Step 3">
+            </div>
+            <h2 class="step-number-ad">03</h2>
+            <h3 class="step-title-ad">sessions start</h3>
+            <p class="step-description-ad">Dermat trained makeO Pros delivers the session</p>
+        </div>
+        <div class="step-ad">
+            <div class="step-icon-ad">
+                <img src="step4.png" alt="Step 4">
+            </div>
+            <h2 class="step-number-ad">04</h2>
+            <h3 class="step-title-ad">post-treatment care</h3>
+            <p class="step-description-ad">We guide and follow up till you recover completely</p>
+        </div>
+    </div>
+</section>
+<section class="testimonial-section">
+    <div class="container">
+      <h2 class="testimonial-heading">Real Stories, Beautiful Transformations</h2>
+      <p class="testimonial-subheading">Experience all the transformations yourself</p>
+  
+      <div class="testimonial-tabs">
+        <button class="tab-button active">Weight Management</button>
+        <button class="tab-button">Skin & Dermat</button>
+        <button class="tab-button">Hair</button>
+        <button class="tab-button">Body</button>
+        <button class="tab-button">Bridal</button>
+        <button class="tab-button">Laser</button>
+      </div>
+  
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <img src="image1.jpg" alt="Testimonial 1" class="testimonial-image">
+          <p class="testimonial-text">Gel therapy has been the most amazing experience for me. It has given me my most expected results. Loved the professionalism the staff brought with them. Highly recommended.</p>
+          <p class="testimonial-name">Apurva, Delhi</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="image2.jpg" alt="Testimonial 2" class="testimonial-image">
+          <p class="testimonial-text">VLCC's Coolsculpting is a game-changer! Comfortable treatment, love handles disappearing, and a boost in confidence. Thanks to VLCC, I've achieved my body goals. If you're considering it, go to VLCC – they're the best!</p>
+          <p class="testimonial-name">Neha Sharma, Delhi</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="image3.jpg" alt="Testimonial 3" class="testimonial-image">
+          <p class="testimonial-text">VLCC's Coolsculpting was a game-changer for me! After years of struggling with stubborn belly fat, the painless procedure and quick recovery were a relief. Within months, I saw a noticeable reduction in fat. I finally have bikini confidence thanks to VLCC!</p>
+          <p class="testimonial-name">Tanya Dua, Delhi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+  tabButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // Add active class to the clicked button
+      button.classList.add('active');
+
+      // Show/Hide testimonial cards
+      testimonialCards.forEach((card, cardIndex) => {
+        if (index === cardIndex || index === 0) { // Example logic
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+
+  </script>
+  
+</body>
+</html>
