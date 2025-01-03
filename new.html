@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Header with Dropdown</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="icon" type="image/svg" href="images/logofav.svg">
+  
+  <style>
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #f7ecd6;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    /* Navigation */
+    .nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 5px 10px;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link:hover {
+      color: #ff6c00;
+    }
+
+    .nav-link::after {
+      content: "▼";
+      font-size: 0.7rem;
+      margin-left: 5px;
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-item.active .nav-link::after {
+      transform: rotate(180deg);
+      color: #ff6c00;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 8px;
+      width: 700px;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.3s ease, max-height 0.5s ease;
+      max-height: 0;
+      overflow: hidden;
+      
+    }
+
+    .dropdown-column {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .dropdown ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dropdown li {
+      margin: 8px 0;
+    }
+
+    .dropdown li:first-child {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    /* Show Dropdown on hover for desktop */
+    .nav-item:hover .dropdown {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+      opacity: 1;
+      max-height: 500px; /* Arbitrary large value */
+    }
+
+    /* Show Dropdown on click for mobile */
+    @media (max-width: 768px) {
+      .nav-item.active .dropdown {
+        display: block;
+        opacity: 1;
+        max-height: 500px;
+      }
+    }
+
+    /* CTA Buttons */
+    .cta {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .btn {
+      background-color: #ff8c00;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff6c00;
+    }
+
+    .btn-secondary {
+      background-color: #ffffff;
+      color: #ff8c00;
+      border: 2px solid #ff8c00;
+    }
+
+    .btn-secondary:hover {
+      background-color: #ffe3c0;
+    }
+
+    .locations {
+      margin-left: 20px;
+      font-weight: bold;
+      color: #333;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .locations:hover {
+      color: #ff6c00;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 15px;
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #f7ecd6;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 15px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-item {
+        width: 100%;
+      }
+
+      .nav-item:hover .dropdown {
+        display: none;
+      }
+
+      .hamburger-menu {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .cta {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 10px;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+
+      .btn-secondary {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+
+      .nav.active {
+        display: flex;
+        opacity: 1;
+      }
+
+      .dropdown {
+        display: block;
+        max-height: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease, max-height 0.5s ease;
+      }
+
+      .nav-item.active .dropdown {
+        display: block;
+        opacity: 1;
+        max-height: 500px; /* Arbitrary large value */
+      }
+    }
+
+    /* Hide Hamburger on Laptop */
+    @media (min-width: 769px) {
+      .hamburger-menu {
+        display: none;
+      }
+    }
+
+  </style>
+
+</head>
+<body>
+  <header class="header">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="rlogo.png" alt="Logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-item">
+        <a href="#" class="nav-link">LASER</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Browse by Concerns</li>
+              <li>Acne Scars</li>
+              <li>Aging, Fine Lines & Wrinkles</li>
+              <li>Skin Tanning</li>
+              <li>Hyper-Pigmentation</li>
+              <li>Feature Enhancement</li>
+            </ul>
+          </div>
+          <div class="dropdown-column">
+            <ul>
+              <li>Browse by Treatment</li>
+              <li>UnWrinkle GFC Face</li>
+              <li>Advanced Microneedling</li>
+              <li>Laser Toning</li>
+              <li>Glow Drips (IV Infusion)</li>
+              <li>Threadlift</li>
+            </ul>
+          </div>
+          <div class="dropdown-column">
+            <ul>
+              <li>Medi-Facials & Peels</li>
+              <li>Hydrafacial</li>
+              <li>Carbon Facial</li>
+              <li>Anti Scar Peel</li>
+              <li>Party Peel</li>
+              <li>Under Eye Peel</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">SKIN</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Skin Treatments</li>
+              <li>Hydrafacial</li>
+              <li>Carbon Peel</li>
+              <li>Skin Lightening</li>
+              <li>Anti-Aging Treatments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">HAIR</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Hair Treatments</li>
+              <li>PRP Therapy</li>
+              <li>Laser Hair Removal</li>
+              <li>Hair Transplants</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">BODY</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Body Sculpting</li>
+              <li>CoolSculpting</li>
+              <li>Cellulite Reduction</li>
+              <li>Body Contouring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+
+    <!-- Extra Links and Buttons -->
+    <div class="cta">
+      <a href="#" class="locations">Our Locations</a>
+      <a href="#" class="btn btn-secondary">Talk to Us</a>
+      <a href="#" class="btn">Book FREE Appointment</a>
+    </div>
+  </header>
+
+  <script>
+    // Toggle the menu visibility when clicking the hamburger
+    function toggleMenu() {
+      const nav = document.querySelector('.nav');
+      nav.classList.toggle('active');
+    }
+
+    // Toggle dropdown menu on click for mobile view
+    const navItems = document.querySelectorAll('.nav-item');
+
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Only toggle dropdowns in mobile
+        if (window.innerWidth <= 768) {
+          item.classList.toggle('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

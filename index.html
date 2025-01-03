@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Header with Dropdown</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg" href="images/logofav.svg"> 
+  <style>
+    /* Importing Playfair Display font */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    /* General Reset */
+    
+  </style>
+</head>
+<body>
+  <header class="header">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="rlogo.png" alt="Logo">
+    </div>
+    <div class="nav-toggle">☰</div>
+   
+  
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-item">
+        <a href="#" class="nav-link">LASER</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Browse by Concerns</li>
+              <li>Acne Scars</li>
+              <li>Aging, Fine Lines & Wrinkles</li>
+              <li>Skin Tanning</li>
+              <li>Hyper-Pigmentation</li>
+              <li>Feature Enhancement</li>
+            </ul>
+          </div>
+          <div class="dropdown-column">
+            <ul>
+              <li>Browse by Treatment</li>
+              <li>UnWrinkle GFC Face</li>
+              <li>Advanced Microneedling</li>
+              <li>Laser Toning</li>
+              <li>Glow Drips (IV Infusion)</li>
+              <li>Threadlift</li>
+            </ul>
+          </div>
+          <div class="dropdown-column">
+            <ul>
+              <li>Medi-Facials & Peels</li>
+              <li>Hydrafacial</li>
+              <li>Carbon Facial</li>
+              <li>Anti Scar Peel</li>
+              <li>Party Peel</li>
+              <li>Under Eye Peel</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">SKIN</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Skin Treatments</li>
+              <li>Hydrafacial</li>
+              <li>Carbon Peel</li>
+              <li>Skin Lightening</li>
+              <li>Anti-Aging Treatments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">IV-DRIPS</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Hair Treatments</li>
+              <li>PRP Therapy</li>
+              <li>Laser Hair Removal</li>
+              <li>Hair Transplants</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">BODY</a>
+        <div class="dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li>Body Sculpting</li>
+              <li>CoolSculpting</li>
+              <li>Cellulite Reduction</li>
+              <li>Body Contouring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Extra Links and Buttons -->
+    <div class="cta">
+      <a href="#" class="locations">Our Locations</a>
+      <a href="#" class="btn btn-secondary">Talk to Us</a>
+      <a href="#" class="btn">Book FREE Appointment</a>
+    </div>
+  </header>
+  <section class="hero">
+    <video autoplay muted loop>
+      <source src="rareskinsvid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay">
+      <h1>Your Stunning Hero Title</h1>
+      <p>Subheading text that provides more context and catches attention.</p>
+      <a href="#" class="btn">Learn More</a>
+    </div>
+  </section>
+  <div class="section">
+    <h1>We Deal in Powerful Transformations</h1>
+    <p>We have carefully curated a wide array of dermatology services to effectively target diverse skin concerns, empowering you with the necessary support and treatments to elevate your self-esteem and invigorate your confidence.</p>
+    <a href="#" class="about-btn">About us</a>
+  
+    <div class="cards-container">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/220x280" alt="Laser Hair Removal">
+        <div class="card-text">Laser Hair Removal</div>
+        <div class="arrow">➔</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/220x280" alt="Skin">
+        <div class="card-text">Skin</div>
+        <div class="arrow">➔</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/220x280" alt="Hair">
+        <div class="card-text">Hair</div>
+        <div class="arrow">➔</div>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/220x280" alt="Body">
+        <div class="card-text">Body</div>
+        <div class="arrow">➔</div>
+      </div>
+    </div>
+  
+    <div class="cta-button">
+      <a href="#" class="book-btn">Book Appointment</a>
+    </div>
+  </div>
+  <section class="section-ad">
+    <h1>why makeO (formerly skinnsi) is different?</h1>
+    <h2>6 reasons to try us out</h2>
+    <div class="grid-ad">
+        <div class="card-ad">
+            <img src="icon1.png" alt="Convenient Service">
+            <h3>convenient service</h3>
+            <p>Get our services at the nearest Experience Centre or let us come to your home.</p>
+        </div>
+        <div class="card-ad">
+            <img src="icon2.png" alt="Backed by Experts">
+            <h3>backed by experts</h3>
+            <p>Our products and services are designed and approved by dermats.</p>
+        </div>
+        <div class="card-ad">
+            <img src="icon3.png" alt="Latest Technology">
+            <h3>latest technology</h3>
+            <p>The most advanced in India.</p>
+        </div>
+        <div class="card-ad">
+            <img src="icon4.png" alt="Personalized Care">
+            <h3>personalized care</h3>
+            <p>Designed for you and your skin.</p>
+        </div>
+        <div class="card-ad">
+            <img src="icon5.png" alt="Easy on the Pocket">
+            <h3>easy on the pocket</h3>
+            <p>Enjoy affordable packages and EMI options.</p>
+        </div>
+        <div class="card-ad">
+            <img src="icon6.png" alt="Always Available">
+            <h3>always available</h3>
+            <p>Our team is one call away.</p>
+        </div>
+    </div>
+</section>
+<section class="hot-deals-ad">
+    <h1 class="deals-title-ad">Hot Deals</h1>
+    <div class="deals-grid-ad">
+        <div class="deal-card-ad">
+            <img src="deal1.png" alt="Deal 1" class="deal-image-ad">
+            <div class="deal-content-ad">
+                <h2 class="deal-heading-ad">Slimming Therapies</h2>
+                <p class="deal-subheading-ad">Get Free Consultation</p>
+                <p class="deal-off-ad">UPTO <span>50% OFF</span></p>
+                <button class="deal-button-ad">Claim Now</button>
+            </div>
+            <div class="deal-tag-ad">FREE TRIAL</div>
+        </div>
+        <div class="deal-card-ad">
+            <img src="deal2.png" alt="Deal 2" class="deal-image-ad">
+            <div class="deal-content-ad">
+                <h2 class="deal-heading-ad">Dermat Treatment</h2>
+                <p class="deal-subheading-ad">Get Free Consultation</p>
+                <p class="deal-off-ad">UPTO <span>40% OFF</span></p>
+                <button class="deal-button-ad">Claim Now</button>
+            </div>
+            <div class="deal-tag-ad">BUT 1 GET 1 FREE</div>
+        </div>
+    </div>
+</section>
+<section class="how-it-works-ad">
+    <h1 class="how-title-ad">how makeO (formerly skinnsi) works</h1>
+    <div class="steps-container-ad">
+        <div class="step-ad">
+            <div class="step-icon-ad">
+                <img src="step1.png" alt="Step 1">
+            </div>
+            <h2 class="step-number-ad">01</h2>
+            <h3 class="step-title-ad">self-assessment</h3>
+            <p class="step-description-ad">Answer our medical survey for our experts</p>
+        </div>
+        <div class="step-ad">
+            <div class="step-icon-ad">
+                <img src="step2.png" alt="Step 2">
+            </div>
+            <h2 class="step-number-ad">02</h2>
+            <h3 class="step-title-ad">appointment</h3>
+            <p class="step-description-ad">Book your appointment</p>
+        </div>
+        <div class="step-ad">
+            <div class="step-icon-ad">
+                <img src="step3.png" alt="Step 3">
+            </div>
+            <h2 class="step-number-ad">03</h2>
+            <h3 class="step-title-ad">sessions start</h3>
+            <p class="step-description-ad">Dermat trained makeO Pros delivers the session</p>
+        </div>
+        <div class="step-ad">
+            <div class="step-icon-ad">
+                <img src="step4.png" alt="Step 4">
+            </div>
+            <h2 class="step-number-ad">04</h2>
+            <h3 class="step-title-ad">post-treatment care</h3>
+            <p class="step-description-ad">We guide and follow up till you recover completely</p>
+        </div>
+    </div>
+</section>
+<section class="testimonial-section">
+    <div class="container">
+      <h2 class="testimonial-heading">Real Stories, Beautiful Transformations</h2>
+      <p class="testimonial-subheading">Experience all the transformations yourself</p>
+  
+      <div class="testimonial-tabs">
+        <button class="tab-button active">Weight Management</button>
+        <button class="tab-button">Skin & Dermat</button>
+        <button class="tab-button">Hair</button>
+        <button class="tab-button">Body</button>
+        <button class="tab-button">Bridal</button>
+        <button class="tab-button">Laser</button>
+      </div>
+  
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <img src="image1.jpg" alt="Testimonial 1" class="testimonial-image">
+          <p class="testimonial-text">Gel therapy has been the most amazing experience for me. It has given me my most expected results. Loved the professionalism the staff brought with them. Highly recommended.</p>
+          <p class="testimonial-name">Apurva, Delhi</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="image2.jpg" alt="Testimonial 2" class="testimonial-image">
+          <p class="testimonial-text">VLCC's Coolsculpting is a game-changer! Comfortable treatment, love handles disappearing, and a boost in confidence. Thanks to VLCC, I've achieved my body goals. If you're considering it, go to VLCC – they're the best!</p>
+          <p class="testimonial-name">Neha Sharma, Delhi</p>
+        </div>
+        <div class="testimonial-card">
+          <img src="image3.jpg" alt="Testimonial 3" class="testimonial-image">
+          <p class="testimonial-text">VLCC's Coolsculpting was a game-changer for me! After years of struggling with stubborn belly fat, the painless procedure and quick recovery were a relief. Within months, I saw a noticeable reduction in fat. I finally have bikini confidence thanks to VLCC!</p>
+          <p class="testimonial-name">Tanya Dua, Delhi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="blog-section">
+    <h2>Read Our Blog</h2>
+    <div class="marquee-container">
+        <div class="marquee">
+            <div class="blog-card">
+                <img src="https://via.placeholder.com/400" alt="Blog 1">
+                <div class="blog-content">
+                    <h3>Under Eye Care Tips</h3>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="https://via.placeholder.com/400" alt="Blog 2">
+                <div class="blog-content">
+                    <h3>10+ Skin Whitening Remedies</h3>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="https://via.placeholder.com/400" alt="Blog 3">
+                <div class="blog-content">
+                    <h3>Effective Anti-Ageing Tips</h3>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="https://via.placeholder.com/400" alt="Blog 4">
+                <div class="blog-content">
+                    <h3>Natural Hair Care Remedies</h3>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <img src="https://via.placeholder.com/400" alt="Blog 5">
+                <div class="blog-content">
+                    <h3>Skincare Myths Busted</h3>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <section id="contact-section">
+    <div class="contact-container">
+      <div class="contact-header">
+        <span class="phone-number">📞 +91 9182830417</span>
+      </div>
+      <h2 class="contact-title">Start your journey Now!</h2>
+      <form id="whatsappForm">
+        <input type="text" id="name" placeholder="Enter your name" required class="form-input">
+        <input type="tel" id="phone" placeholder="Enter 10-digit Phone number" pattern="[0-9]{10}" required class="form-input">
+        <select id="location" required class="form-input">
+          <option value="" disabled selected>Preferred Clinic Location</option>
+          <option value="Location 1">Location 1</option>
+          <option value="Location 2">Location 2</option>
+          <option value="Location 3">Location 3</option>
+        </select>
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
+  </section>
+  <div class="bmi-calculator">
+    <section class="form-section">
+        <h1>BMI Calculator</h1>
+        <p>Enter the values and click the calculate button to know your Body Mass Index.</p>
+        <form id="bmiForm">
+            <input type="text" id="name" placeholder="Enter Name" required>
+            <input type="text" id="phone" placeholder="Enter Phone No." required>
+            <div class="gender-selection">
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+            </div>
+            <input type="number" id="age" placeholder="Enter Age" required>
+            <input type="number" id="height" placeholder="Enter Height*" required>
+            <input type="number" id="weight" placeholder="Enter Weight*" required>
+            <button type="button" id="calculateBtn">Calculate</button>
+        </form>
+    </section>
+
+    <section class="results-section">
+        <h2>Your Results</h2>
+        <p>A BMI between 18.5 and 22.9 is considered normal weight, reducing the risk of weight-related health issues.</p>
+        <div class="gauge">
+            <!-- Placeholder for Gauge -->
+            <canvas id="bmiGauge"></canvas>
+        </div>
+        <ul>
+            <li><span class="dot blue"></span> Underweight</li>
+            <li><span class="dot green"></span> Normal</li>
+            <li><span class="dot yellow"></span> Overweight</li>
+            <li><span class="dot pink"></span> Pre-Obese</li>
+            <li><span class="dot red"></span> Obese</li>
+        </ul>
+        <p>Your BMI Value: <span id="bmiValue">-</span></p>
+        <p>BMI Range: <span id="bmiRange">-</span></p>
+        <p>Your BMI Classification: <span id="bmiClass">-</span></p>
+    </section>
+</div>
+<!-- footer -->
+<div class="footer">
+  <div class="footer-content">
+      <div class="footer-left">
+          <img src="logo.png" alt="Bodycraft Logo">
+          <p>SALON . SKIN . CLINIC . SPA</p>
+      </div>
+      <div class="footer-right">
+          <ul>
+              <li><a href="#">Hair Salon</a></li>
+              <li><a href="#">Spa & Wellness</a></li>
+              <li><a href="#">Skin Care Services</a></li>
+              <li><a href="#">Personal Grooming Services</a></li>
+              <li><a href="#">Bridal Services</a></li>
+              <li><a href="#">Nail Salon</a></li>
+          </ul>
+          <ul>
+              <li><a href="#">Bodycraft Skin Care Clinic</a></li>
+              <li><a href="#">Bodycraft Hair Treatment Clinic</a></li>
+              <li><a href="#">Bodycraft Anti-Aging Treatment Clinic</a></li>
+              <li><a href="#">Bodycraft Cosmetic Treatment Clinic</a></li>
+              <li><a href="#">Bodycraft Body Clinic</a></li>
+          </ul>
+          <ul>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Mumbai</a></li>
+              <li><a href="#">Bangalore</a></li>
+              <li><a href="#">Gurgaon</a></li>
+              <li><a href="#">Own a Franchise</a></li>
+          </ul>
+          <ul>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Refer a Friend</a></li>
+              <li><a href="#">Packages</a></li>
+              <li><a href="#">Gift Card</a></li>
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#">About Us - Clinic</a></li>
+              <li><a href="#">About Us - Salon</a></li>
+              <li><a href="#">Book an Appointment</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Sitemap</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+          </ul>
+          <div class="footer-social">
+              <h3>Get Social</h3>
+              <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+              <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+              <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+          </div>
+      </div>
+  </div>
+</div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+  tabButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // Add active class to the clicked button
+      button.classList.add('active');
+
+      // Show/Hide testimonial cards
+      testimonialCards.forEach((card, cardIndex) => {
+        if (index === cardIndex || index === 0) { // Example logic
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+// WhatsApp Form Submission
+document.getElementById("whatsappForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const location = document.getElementById("location").value.trim();
+
+  // Construct the professional WhatsApp message
+  const message = `Hello RareSkin,%0A%0AI am interested in learning more about your services. Here are my details:%0A%0A- Name: ${name}%0A- Phone Number: ${phone}%0A- Preferred Clinic Location: ${location}%0A%0AKindly reach out to me with further information. Looking forward to your response.%0A%0AThank you!`;
+
+  const whatsappNumber = "9182830417"; // Update this to the desired WhatsApp number
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+  // Open WhatsApp with the pre-defined message
+  window.open(whatsappURL, "_blank");
+});
+document.getElementById("calculateBtn").addEventListener("click", function () {
+    const height = parseFloat(document.getElementById("height").value);
+    const weight = parseFloat(document.getElementById("weight").value);
+
+    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+        alert("Please enter valid height and weight.");
+        return;
+    }
+
+    const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+    const bmiValue = document.getElementById("bmiValue");
+    const bmiRange = document.getElementById("bmiRange");
+    const bmiClass = document.getElementById("bmiClass");
+
+    bmiValue.textContent = bmi;
+
+    if (bmi < 18.5) {
+        bmiRange.textContent = "Underweight";
+        bmiClass.textContent = "Underweight";
+    } else if (bmi < 23) {
+        bmiRange.textContent = "Normal";
+        bmiClass.textContent = "Normal";
+    } else if (bmi < 25) {
+        bmiRange.textContent = "Overweight";
+        bmiClass.textContent = "Overweight";
+    } else if (bmi < 30) {
+        bmiRange.textContent = "Pre-Obese";
+        bmiClass.textContent = "Pre-Obese";
+    } else {
+        bmiRange.textContent = "Obese";
+        bmiClass.textContent = "Obese";
+    }
+});
+
+
+// Get the hamburger menu button and the navigation menu
+function toggleMenu() {
+    var overlayMenu = document.getElementById("overlayMenu");
+    if (overlayMenu.style.width === "100%") {
+        overlayMenu.style.width = "0";
+    } else {
+        overlayMenu.style.width = "100%";
+    }
+}
+
+
+  
+  </script>
+  
+</body>
+</html>
