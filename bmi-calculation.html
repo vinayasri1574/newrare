@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RareSkin</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg" href="images/logofav.svg"> 
+  <style>
+    /* Importing Playfair Display font */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    /* General Reset */
+    
+  </style>
+  
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+     .bmi-calculators {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 40px;
+      background-color: #f5f5f5;
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 1200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .bmi-contents {
+      max-width: 50%;
+    }
+
+    .bmi-contents h2 {
+      font-size: 28px;
+      color: #333;
+      margin: 0 0 10px;
+    }
+
+    .bmi-contents p {
+      font-size: 16px;
+      color: #666;
+      margin: 0 0 20px;
+    }
+
+    .bmi-btns {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #f58220;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .bmi-btns:hover {
+      background-color: #e5701a;
+    }
+
+    .bmi-chart {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .bmi-figure {
+      width: 100px;
+    }
+
+    .bmi-scale {
+      width: 300px;
+    }
+
+    .bmi-calculator {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+      margin-top: 140px;
+    }
+
+    .form-section, .results-section {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 45%;
+    }
+
+    h1, h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    form input, form button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .gender-selection {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      background-color: #f96c28;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e55a1e;
+    }
+
+    .results-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+}
+
+.results-section ul li {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 10px; /* Add spacing between items on mobile */
+  flex: 1 1 45%; /* Make items take up 45% of the container width on mobile */
+}
+
+.results-section .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.blue { background-color: blue; }
+.green { background-color: green; }
+.yellow { background-color: yellow; }
+.pink { background-color: pink; }
+.red { background-color: red; }
+
+.gauge {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+canvas {
+  width: 100%; /* Make the canvas responsive */
+  max-width: 300px; /* Ensure it doesn't grow too large */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Mobile responsive adjustments */
+@media screen and (max-width: 768px) {
+  .results-section ul {
+    gap: 5px; /* Reduce the gap on smaller screens */
+  }
+
+  .results-section ul li {
+    font-size: 12px; /* Smaller font size for mobile */
+    flex: 1 1 100%; /* Allow items to take up full width */
+  }
+
+  .gauge canvas {
+    width: 80%; /* Make the canvas slightly smaller on mobile */
+  }
+}
+
+    @media screen and (max-width: 768px) {
+      .bmi-calculator {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .form-section, .results-section {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      h1, h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      form input, form button {
+        font-size: 14px;
+      }
+    }
+
+    .bmi-calculator-info {
+    font-family: 'Poppins', sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffffff, #f4f4f9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .bmi-calculator-info:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .bmi-table-info {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .bmi-table-info th, .bmi-table-info td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: left;
+  }
+
+  .bmi-table-info th {
+    background-color: #f6f6f8;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .bmi-table-info tr:nth-child(even) {
+    background-color: #f9f9fc;
+  }
+
+  .bmi-table-info tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transition: background-color 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .bmi-table-info th, .bmi-table-info td {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .bmi-calculator-info {
+      padding: 15px;
+    }
+  }
+  @media (max-width: 768px) {
+  .bmi-calculator-info {
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .bmi-calculator-info h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .bmi-table-info {
+    font-size: 14px;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+  }
+
+  .bmi-table-info th, .bmi-table-info td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .bmi-table-info th {
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="rlogo.png" alt="Logo">
+      </a>
+    </div>
+    
+    <div class="menu-toggle" onclick="toggleMobileMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#">Benefits of LHR</a></li>
+      <li>
+        <a href="#">Products</a>
+        <ul class="dropdown">
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 2</a></li>
+          <li><a href="#">Product 3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Treatments</a></li>
+      <li><a href="#">Technology</a></li>
+      <li><a href="#">Our Services</a></li>
+    </ul>
+    <button class="cta-button">
+      <i class="fas fa-headset"></i>
+      Talk to Us
+    </button>
+    <button class="cta-button book-now">
+      <i class="fas fa-calendar-alt"></i>
+      Book Now
+    </button>
+  </header>
+</section>
+
+<div class="mobile-overlay" id="mobileOverlay">
+  <button class="close-button" onclick="toggleMobileMenu()">✖</button>
+  <a href="#">Benefits of LHR</a>
+  <a href="#">Products</a>
+  <a href="#">Treatments</a>
+  <a href="#">Technology</a>
+  <a href="#">Our Services</a>
+</div>
+
+
+
+<div class="bmi-calculator" id="form">
+  <section class="form-section">
+    <h1>BMI Calculator</h1>
+    <p>Enter the values and click the calculate button to know your Body Mass Index.</p>
+    <form id="bmiForm">
+      <input type="text" id="name" placeholder="Enter Name" required>
+      <input type="text" id="phone" placeholder="Enter Phone No." required>
+      <div class="gender-selection">
+        <label><input type="radio" name="gender" value="female" required> Female</label>
+        <label><input type="radio" name="gender" value="male" required> Male</label>
+      </div>
+      <input type="number" id="age" placeholder="Enter Age" required>
+      <input type="number" id="height" placeholder="Enter Height*" required>
+      <input type="number" id="weight" placeholder="Enter Weight*" required>
+      <button type="button" id="calculateBtn">Calculate</button>
+    </form>
+  </section>
+
+  <section class="results-section">
+    <h2>Your Results</h2>
+    <p>A BMI between 18.5 and 22.9 is considered normal weight, reducing the risk of weight-related health issues.</p>
+    <div class="gauge">
+      <canvas id="bmiGauge"></canvas>
+    </div>
+    <ul>
+      <li><span class="dot blue"></span> Underweight</li>
+      <li><span class="dot green"></span> Normal</li>
+      <li><span class="dot yellow"></span> Overweight</li>
+      <li><span class="dot pink"></span> Pre-Obese</li>
+      <li><span class="dot red"></span> Obese</li>
+    </ul>
+    <p>Your BMI Value: <span id="bmiValue">-</span></p>
+    <p>BMI Classification: <span id="bmiClass">-</span></p>
+  </section>
+</div>
+
+
+
+
+<section class="bmi-calculator-info">
+  <h2>BMI Classification Table</h2>
+  <table class="bmi-table-info">
+    <thead>
+      <tr>
+        <th>Classification</th>
+        <th>Popular Description</th>
+        <th>BMI Range (kg/m²)</th>
+        <th>Risk of Co-morbidities</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Underweight</td>
+        <td>Thin</td>
+        <td>&lt; 18.5</td>
+        <td>Low</td>
+      </tr>
+      <tr>
+        <td>Normal range</td>
+        <td>Normal</td>
+        <td>18.5 - 22.9</td>
+        <td>Average</td>
+      </tr>
+      <tr>
+        <td>Overweight</td>
+        <td>Overweight</td>
+        <td>23 - 24.9</td>
+        <td>Low to Moderate Risk</td>
+      </tr>
+      <tr>
+        <td>Pre-obese</td>
+        <td>Overweight</td>
+        <td>25 - 29.9</td>
+        <td>Increased Risk</td>
+      </tr>
+      <tr>
+        <td>Obese Class I</td>
+        <td>Obese</td>
+        <td>30.0 - 34.9</td>
+        <td>Moderate</td>
+      </tr>
+      <tr>
+        <td>Obese Class II</td>
+        <td>Obese</td>
+        <td>35.0 - 39.9</td>
+        <td>Severe</td>
+      </tr>
+      <tr>
+        <td>Obese Class III</td>
+        <td>Morbidly Obese</td>
+        <td>&gt;= 40.0</td>
+        <td>Very Severe</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- footer -->
+<div class="footer">
+  <div class="footer-content">
+      <div class="footer-left">
+          <img src="logo.png" alt="Bodycraft Logo">
+          <p>SALON . SKIN . CLINIC . SPA</p>
+      </div>
+      <div class="footer-right">
+          <ul>
+              <li><a href="#">Hair Salon</a></li>
+              <li><a href="#">Spa & Wellness</a></li>
+              <li><a href="#">Skin Care Services</a></li>
+              <li><a href="#">Personal Grooming Services</a></li>
+              <li><a href="#">Bridal Services</a></li>
+              <li><a href="#">Nail Salon</a></li>
+          </ul>
+          <ul>
+              <li><a href="#">Bodycraft Skin Care Clinic</a></li>
+              <li><a href="#">Bodycraft Hair Treatment Clinic</a></li>
+              <li><a href="#">Bodycraft Anti-Aging Treatment Clinic</a></li>
+              <li><a href="#">Bodycraft Cosmetic Treatment Clinic</a></li>
+              <li><a href="#">Bodycraft Body Clinic</a></li>
+          </ul>
+          <ul>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Mumbai</a></li>
+              <li><a href="#">Bangalore</a></li>
+              <li><a href="#">Gurgaon</a></li>
+              <li><a href="#">Own a Franchise</a></li>
+          </ul>
+          <ul>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Refer a Friend</a></li>
+              <li><a href="#">Packages</a></li>
+              <li><a href="#">Gift Card</a></li>
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#">About Us - Clinic</a></li>
+              <li><a href="#">About Us - Salon</a></li>
+              <li><a href="#">Book an Appointment</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Sitemap</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+          </ul>
+          <div class="footer-social">
+              <h3>Get Social</h3>
+              <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+              <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+              <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<script>
+function toggleMobileMenu() {
+  const overlay = document.getElementById('mobileOverlay');
+  overlay.classList.toggle('show');
+}
+document.getElementById("calculateBtn").addEventListener("click", function() {
+    const height = parseFloat(document.getElementById("height").value);
+    const weight = parseFloat(document.getElementById("weight").value);
+
+    if (!height || !weight) {
+      alert("Please enter both height and weight.");
+      return;
+    }
+
+    const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+
+    let classification = "";
+    let gaugeColor = "green";
+    if (bmi < 18.5) {
+      classification = "Underweight";
+      gaugeColor = "blue";
+    } else if (bmi < 23) {
+      classification = "Normal";
+    } else if (bmi < 25) {
+      classification = "Overweight";
+      gaugeColor = "yellow";
+    } else if (bmi < 30) {
+      classification = "Pre-Obese";
+      gaugeColor = "pink";
+    } else {
+      classification = "Obese";
+      gaugeColor = "red";
+    }
+
+    document.getElementById("bmiValue").innerText = bmi;
+    document.getElementById("bmiClass").innerText = classification;
+
+    drawGauge(bmi, gaugeColor);
+  });
+
+  function drawGauge(value, color) {
+    const canvas = document.getElementById("bmiGauge");
+    const ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height;
+    const radius = 100;
+
+    // Draw background arc
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, Math.PI, 2 * Math.PI);
+    ctx.strokeStyle = "#ddd";
+    ctx.lineWidth = 20;
+    ctx.stroke();
+
+    // Draw value arc
+    ctx.beginPath();
+    const endAngle = Math.PI + (value / 40) * Math.PI;
+    ctx.arc(centerX, centerY, radius, Math.PI, endAngle);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 20;
+    ctx.stroke();
+  }
+</script> 
+
+
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RareSkin</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg" href="images/logofav.svg"> 
+  <style>
+    /* Importing Playfair Display font */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    /* General Reset */
+    
+  </style>
+  
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #0D0321, #7B456A, #FBE4D9);
+  color: #fff;
+}
+
+.flowers-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 120px;
+}
+
+.flowers-left {
+  max-width: 50%;
+}
+
+.flowers-left h1 {
+  font-size: 48px;
+  color: #E393B4;
+}
+
+.flowers-left h2 {
+  font-size: 24px;
+  color: #9E6496;
+}
+
+.flowers-left p {
+  font-size: 18px;
+  color: #DFB6B3;
+}
+
+.flowers-wrapper {
+  background: #5D3C62;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.flowers-wrapper h2 {
+  color: #FBE4D9;
+  margin-bottom: 20px;
+}
+
+.flowers-input {
+  display: flex;
+  align-items: center;
+  background: #7B456A;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.flowers-input i.flowers-icon {
+  margin-right: 10px;
+  color: #DFB6B3;
+}
+
+.flowers-input input.flowers-class,
+.flowers-input select.flowers-class {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #FBE4D9;
+  flex: 1;
+  font-size: 16px;
+}
+
+button.flowers-class {
+  background: #9E6496;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button.flowers-class:hover {
+  background: #E393B4;
+}
+
+.flowers-class {
+  /* General styling for elements with flowers-class */
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+@media (max-width: 768px) {
+  .flowers-container {
+    flex-direction: column; /* Stack content vertically */
+    padding: 20px;
+  }
+
+  .flowers-left {
+    max-width: 100%; /* Allow full width for left content */
+    text-align: center; /* Center-align text for better readability */
+    margin-bottom: 20px;
+  }
+
+  .flowers-left h1 {
+    font-size: 36px; /* Adjust heading size for smaller screens */
+  }
+
+  .flowers-left h2 {
+    font-size: 20px; /* Adjust subheading size */
+  }
+
+  .flowers-left p {
+    font-size: 16px; /* Adjust paragraph font size */
+  }
+
+  .flowers-wrapper {
+    padding: 20px;
+    max-width: 100%; /* Full width for the form */
+  }
+
+  .flowers-input {
+    flex-direction: column; /* Stack input elements vertically */
+    padding: 15px;
+  }
+
+  .flowers-input i.flowers-icon {
+    margin-bottom: 10px; /* Add space below icons */
+    margin-right: 0; /* Remove side margin */
+  }
+
+  button.flowers-class {
+    font-size: 14px; /* Slightly smaller button text */
+    padding: 8px 16px;
+  }
+}
+
+</style>
+<body>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="rlogo.png" alt="Logo">
+        </a>
+      </div>
+      
+      <div class="menu-toggle" onclick="toggleMobileMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#">Benefits of LHR</a></li>
+        <li>
+          <a href="#">Products</a>
+          <ul class="dropdown">
+            <li><a href="#">Product 1</a></li>
+            <li><a href="#">Product 2</a></li>
+            <li><a href="#">Product 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Treatments</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Our Services</a></li>
+      </ul>
+      <button class="cta-button">
+        <i class="fas fa-headset"></i>
+        Talk to Us
+      </button>
+      <button class="cta-button book-now">
+        <i class="fas fa-calendar-alt"></i>
+        Book Now
+      </button>
+    </header>
+  </section>
+  <div class="flowers-container">
+    <!-- Left Content -->
+    <div class="flowers-left">
+      <h1>My New Year Resolution</h1>
+      <h2>Revelation</h2>
+      <p>Up to <strong>30% OFF</strong> on all treatments. January 2025 only!</p>
+    </div>
+  
+    <!-- Form -->
+    <div class="flowers-wrapper">
+      <h2 class="flowers-class">Book Appointment</h2>
+      <form class="flowers-class" onsubmit="sendToWhatsApp(event)">
+        <!-- Full Name -->
+        <div class="flowers-input">
+          <i class="fas fa-user flowers-icon"></i>
+          <input class="flowers-class" type="text" placeholder="Full Name*" required>
+        </div>
+        <!-- Phone Number -->
+        <div class="flowers-input">
+          <i class="fas fa-phone-alt flowers-icon"></i>
+          <input class="flowers-class" type="tel" placeholder="Phone Number*" required>
+        </div>
+        <!-- Select Service -->
+        <div class="flowers-input">
+          <i class="fas fa-clipboard-list flowers-icon"></i>
+          <select class="flowers-class" placeholder="Select Service*" required>
+            <option value="" disabled selected>Select Service*</option>
+            <option value="service1">Service 1</option>
+            <option value="service2">Service 2</option>
+            <option value="service3">Service 3</option>
+          </select>
+        </div>
+        <!-- Select City -->
+        <div class="flowers-input">
+          <i class="fas fa-map-marker-alt flowers-icon"></i>
+          <select class="flowers-class" placeholder="Select City*" required>
+            <option value="" disabled selected>Select City*</option>
+            <option value="city1">City 1</option>
+            <option value="city2">City 2</option>
+            <option value="city3">City 3</option>
+          </select>
+        </div>
+        <!-- Submit Button -->
+        <button class="flowers-class" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+
+
+
+
+  <!-- footer -->
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <img src="logo.png" alt="Bodycraft Logo">
+            <p>SALON . SKIN . CLINIC . SPA</p>
+        </div>
+        <div class="footer-right">
+            <ul>
+                <li><a href="#">Hair Salon</a></li>
+                <li><a href="#">Spa & Wellness</a></li>
+                <li><a href="#">Skin Care Services</a></li>
+                <li><a href="#">Personal Grooming Services</a></li>
+                <li><a href="#">Bridal Services</a></li>
+                <li><a href="#">Nail Salon</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Bodycraft Skin Care Clinic</a></li>
+                <li><a href="#">Bodycraft Hair Treatment Clinic</a></li>
+                <li><a href="#">Bodycraft Anti-Aging Treatment Clinic</a></li>
+                <li><a href="#">Bodycraft Cosmetic Treatment Clinic</a></li>
+                <li><a href="#">Bodycraft Body Clinic</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Locations</a></li>
+                <li><a href="#">Mumbai</a></li>
+                <li><a href="#">Bangalore</a></li>
+                <li><a href="#">Gurgaon</a></li>
+                <li><a href="#">Own a Franchise</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Refer a Friend</a></li>
+                <li><a href="#">Packages</a></li>
+                <li><a href="#">Gift Card</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">About Us - Clinic</a></li>
+                <li><a href="#">About Us - Salon</a></li>
+                <li><a href="#">Book an Appointment</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+            </ul>
+            <div class="footer-social">
+                <h3>Get Social</h3>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            </div>
+        </div>
+    </div>
+  </div>
+    
+    <script>
+      
+  
+    
+      function toggleMobileMenu() {
+        const overlay = document.getElementById('mobileOverlay');
+        overlay.classList.toggle('show');
+      }
+      function sendToWhatsApp(event) {
+  event.preventDefault(); // Prevent form submission to the server
+
+  // Get form input values using "flowers" class names
+  const fullName = document.querySelector('input.flowers-class[placeholder="Full Name*"]').value;
+  const phoneNumber = document.querySelector('input.flowers-class[placeholder="Phone Number*"]').value;
+  const service = document.querySelector('select.flowers-class[placeholder="Select Service*"]').value;
+  const city = document.querySelector('select.flowers-class[placeholder="Select City*"]').value;
+
+  // WhatsApp Number (replace with your actual number, including country code)
+  const whatsappNumber = "919182830417";
+
+  // Pre-filled message for WhatsApp
+  const message = `Hello, I would like to book an appointment. Here are my details:
+  - Full Name: ${fullName}
+  - Phone Number: ${phoneNumber}
+  - Selected Service: ${service}
+  - City: ${city}`;
+
+  // Encode the message for URL
+  const encodedMessage = encodeURIComponent(message);
+
+  // WhatsApp API URL
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+  // Redirect to WhatsApp
+  window.open(whatsappURL, "_blank");
+}
+
+      
+    
+      </script>
+  </body>
+  </html>
