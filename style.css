@@ -348,7 +348,7 @@ margin-bottom: 20px;
 }
 /* Initial hidden state for h1 and p */
 h1, p {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(50px);
   transition: all 0.6s ease-in-out;
 }
@@ -416,6 +416,7 @@ object-fit: cover;
 padding: 15px 0;
 font-family: 'Poppins', sans-serif;
 font-weight: bold;
+color: #000;
 }
 
 .card .arrow {
@@ -1225,6 +1226,13 @@ background-color: #333;
   background-color: #FBE4D9; /* Warm Peach */
   color: #0D0321; /* Deep Navy for readability */
   background-color: #FBE4D9;
+  /* background-image: url('background.avif');
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;  
+  width: 100%;                   /
+  height: 100vh; */
+  
 }
 
 .treatment-section h2 {
@@ -1277,15 +1285,15 @@ background-color: #333;
   border-radius: 50%;
   padding: 20px;
   text-align: center;
-  width: 150px;
+  width: 200px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-item img {
   border-radius: 50%;
-  max-width: 100px;
+  max-width: 120px;
   height: auto;
-  border: 3px solid #8D7AB6; /* Soft Lilac border */
+  /* border: 3px solid #8D7AB6;  */
 }
 
 .service-item h3 {
@@ -1412,4 +1420,37 @@ background-color: #333;
   .bmi-figure, .bmi-scale {
     width: 80%;
   }
+}
+.app-download-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 50px;
+  color: linear-gradient(180deg, #ff914d, #f97b25);
+}
+
+.app-download-section .content {
+  max-width: 50%;
+}
+
+.app-download-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.app-download-section .store-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.store-buttons a img {
+  width: 150px;
+  height: auto;
+}
+
+.app-download-section .phone-image img {
+  max-width: 200px;
+  width: 100%;
 }

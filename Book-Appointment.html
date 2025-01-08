@@ -160,6 +160,19 @@ button.flowers-class:hover {
     padding: 8px 16px;
   }
 }
+/* Initial hidden state for h1 and p */
+h1, p {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-in-out;
+}
+
+/* Visible state for h1 and p */
+h1.active, p.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 </style>
 <body>
@@ -341,6 +354,31 @@ button.flowers-class:hover {
   // Redirect to WhatsApp
   window.open(whatsappURL, "_blank");
 }
+// Select all h1 and p elements
+const textElements = document.querySelectorAll('h1, p');
+
+// Set up the Intersection Observer
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add the active class when the text is visible
+        entry.target.classList.add('active');
+        // Unobserve the element after animation
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.2, // Adjust the visibility threshold
+  }
+);
+
+// Observe each h1 and p
+textElements.forEach(text => {
+  observer.observe(text);
+});
+
 
       
     
