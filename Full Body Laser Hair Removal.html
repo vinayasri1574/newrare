@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Body Lazer Hair</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg" href="images/logofav.svg"> 
+  <style>
+    /* Importing Playfair Display font */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    /* General Reset */
+    
+  </style>
+  
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    /* body {
+        font-family: 'Poppins';
+      line-height: 1.6;
+      background: linear-gradient(145deg, #0D0321, #5D3C62);
+      color: #FBE4D9;
+      overflow-x: hidden;
+      padding: 20px;
+    } */
+
+    h1, h3 {
+      font-weight: bold;
+    }
+
+    .laser-treatment-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-top: 80px;
+      padding: 2rem;
+      /* background: linear-gradient(145deg, #7B456A, #9E6496); */
+      border-radius: 20px;
+      /* box-shadow: 8px 8px 20px #8D7AB6, -8px -8px 20px #E393B4; */
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    .laser-treatment-section-headings {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 150px;
+    color: #FBE4D9;
+}
+
+    .laser-treatment-image-container {
+      flex: 1.3;
+      perspective: 1000px;
+    }
+
+    .laser-treatment-image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transform: scale(1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .laser-treatment-image-container img:hover {
+      transform: scale(1.05) rotateY(10deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .laser-treatment-content-wrapper {
+      flex: 1.7;
+      padding: 1rem;
+      animation: slideInFromRight 1.2s ease-in-out;
+      margin-top: -60px;
+    }
+
+    .laser-treatment-section-heading {
+      font-size: 2.2rem;
+      color: #FBE4D9;
+      margin-bottom: 0.8rem;
+    }
+
+    .laser-treatment-subheading {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #E393B4;
+      margin-bottom: 1rem;
+    }
+
+    .laser-treatment-description {
+      font-size: 12.5px;
+      margin-bottom: 1.5rem;
+      color: #FBE4D9;
+    }
+
+    .treatable-concerns,
+    .target-areas {
+      margin-bottom: 1.5rem;
+      
+    }
+
+    .treatable-concerns h3,
+    .target-areas h3 {
+      font-size: 1.2rem;
+      color: #DFB6B3;
+      margin-top: 65px;
+      
+    }
+
+    .concern-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: linear-gradient(145deg, #DFB6B3, #FBE4D9);
+      /* padding: 1rem; */
+      border-radius: 12px;
+      font-size: 1rem;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .concern-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .concern-card img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .target-areas p {
+      font-size: 1rem;
+      margin-top: -35px;
+      background-color:#9E6496;
+      border-radius: 10px;
+    }
+
+    .laser-treatment-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 90px;
+    }
+
+    .laser-treatment-info-card {
+      
+
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.4rem;
+    /* background-color: #f9f9f9; */
+    padding: -0.2rem;
+    border-radius: 8px;
+
+      /* background: linear-gradient(145deg, #9E6496, #7B456A); */
+      /* padding: 1.2rem; */
+      /* border-radius: 15px; */
+      /* box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2); */
+      transition: transform 0.3s ease;
+    }
+
+    .laser-treatment-info-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .laser-treatment-info-card img {
+      width: 76px;
+      height: 76px;
+    }
+
+    .laser-treatment-info-card p {
+      font-size: 1rem;
+      color: #FBE4D9;
+    }
+
+    .laser-treatment-buttons {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 85px;
+    }
+
+    .call-now-btn,
+    .book-appointment-btn {
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .call-now-btn {
+      background: linear-gradient(145deg, #DFB6B3, #FBE4D9);
+      color: #333;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .call-now-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .book-appointment-btn {
+      background: linear-gradient(145deg, #8D7AB6, #9E6496);
+      color: #FBE4D9;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .book-appointment-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .laser-treatment-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .laser-treatment-section-headings {
+    font-size: 2rem;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .laser-treatment-image-container {
+    width: 100%;
+  }
+
+  .laser-treatment-content-wrapper {
+    margin-top: 0;
+    padding: 1rem;
+  }
+
+  .laser-treatment-section-heading {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .laser-treatment-subheading {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .laser-treatment-description {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+
+  .treatable-concerns h3,
+  .target-areas h3 {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .concern-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .concern-card img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .target-areas p {
+    font-size: 0.9rem;
+    margin-top: 0;
+    padding: 0.5rem;
+  }
+
+  .laser-treatment-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .laser-treatment-info-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .laser-treatment-info-card p {
+    font-size: 0.9rem;
+  }
+
+  .laser-treatment-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .call-now-btn,
+  .book-appointment-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .laser-treatment-section-headings {
+    font-size: 1.5rem;
+    margin-top: 80px;
+  }
+
+  .laser-treatment-section-heading {
+    font-size: 1.5rem;
+  }
+
+  .laser-treatment-subheading {
+    font-size: 0.8rem;
+  }
+
+  .laser-treatment-description {
+    font-size: 0.8rem;
+  }
+
+  .concern-card {
+    gap: 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .concern-card img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .laser-treatment-info-card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .laser-treatment-info-card p {
+    font-size: 0.8rem;
+  }
+
+  .call-now-btn,
+  .book-appointment-btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+
+
+    /* scroller */
+    .laser-treatment-laser-treatment-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+}
+    .laser-treatment-section-heading {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #fbe4d9;
+      margin-bottom: 30px;
+    }
+
+    .laser-treatment-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+.laser-treatment-section-heading {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    /* margin-top: 150px; */
+
+}
+
+.laser-treatment-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.laser-treatment-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #5d3c62;
+  border-radius: 4px;
+}
+
+.laser-treatment-scroll-container::-webkit-scrollbar-track {
+  background-color: #dfb6b3;
+}
+
+.laser-treatment-step-card {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 290px; /* Set a fixed height for the card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures the image doesn't overflow the card */
+}
+
+.laser-treatment-step-card-content img {
+    width: 100%; /* Makes the image fill the card's width */
+    height: 100%; /* Makes the image fill the card's height */
+    object-fit: cover; /* Ensures the image covers the card area without distortion */
+    border-radius: 15px; /* Matches the card's rounded corners */
+}
+
+
+
+@media (max-width: 768px) {
+  .laser-treatment-scroll-container {
+    gap: 15px;
+  }
+
+  .laser-treatment-step-card {
+    width: 250px;
+    flex-direction: column; /* Stack image and content for smaller screens */
+  }
+
+  .laser-treatment-step-card img {
+    width: 100%; /* Full width on smaller screens */
+    margin-right: 0; /* Remove margin when stacked */
+  }
+
+  .laser-treatment-step-card-text {
+    padding-top: 10px; /* Add space between image and text */
+  }
+}
+
+/* laser */
+.laser-treatment {
+      padding: 50px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .laser-treatment h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 2;
+      color: #FBE4D9;
+      animation: slideIn 1s ease-in-out;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      background: linear-gradient(90deg, #fbe4d9, #e393b4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .icons-container, .benefits-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .icon, .benefit {
+      width: 180px;
+      padding: 20px;
+      border-radius: 15px;
+      background: #5D3C62;
+      color: #FBE4D9;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+      transform: translateY(0);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .icon img, .benefit img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+      filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+      transition: transform 0.4s ease;
+    }
+
+    .icon:hover, .benefit:hover {
+      transform: translateY(-10px);
+      background: linear-gradient(135deg, #7b456A, #DFB6B3);
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .icon img:hover, .benefit img:hover {
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    .benefit-title {
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    /* Background Animation */
+    .laser-treatment::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #E393B4 0%, transparent 70%);
+      animation: move 8s linear infinite;
+      z-index: 1;
+      opacity: 0.6;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes move {
+      0% {
+        transform: translate(-100px, -100px);
+      }
+      50% {
+        transform: translate(100px, 100px);
+      }
+      100% {
+        transform: translate(-100px, -100px);
+      }
+    }
+
+    @media (max-width: 768px) {
+  .laser-treatment {
+    padding: 40px 20px;
+  }
+
+  .laser-treatment h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .icons-container, .benefits-container {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .icon, .benefit {
+    width: 160px;
+    padding: 15px;
+  }
+
+  .icon img, .benefit img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .benefit-title {
+    font-size: 1rem;
+  }
+
+  .laser-treatment::before {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .laser-treatment {
+    padding: 30px 15px;
+  }
+
+  .laser-treatment h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .icons-container, .benefits-container {
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .icon, .benefit {
+    width: 140px;
+    padding: 12px;
+  }
+
+  .icon img, .benefit img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .benefit-title {
+    font-size: 0.9rem;
+  }
+
+  .laser-treatment::before {
+    width: 150px;
+    height: 150px;
+  }
+}
+/* banner */
+    .laser-treatments-section {
+  font-family: 'Arial', sans-serif;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.promo-banner {
+  display: flex;
+  background-color: #FBE4D9; /* Light peach */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.promo-banner img {
+  max-width: 50%;
+  object-fit: cover;
+}
+
+.banner-content {
+  padding: 1rem;
+  flex: 1;
+}
+
+.banner-content h2 {
+  color: #7B456A; /* Deep pinkish-purple */
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner-content p {
+  font-size: 1rem;
+  color: #5D3C62; /* Muted purple */
+}
+
+.banner-content span {
+  display: block;
+  font-size: 1.5rem;
+  margin: rem 0;
+  color: #E393B4; /* Soft pink */
+}
+
+.banner-content strong {
+  color: #9E6496; /* Rich pink */
+}
+
+.banner-content button {
+  padding: 0.8rem 1.2rem;
+  background-color: #7B456A; /* Deep pinkish-purple */
+  border: none;
+  color: #FBE4D9; /* Light peach */
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.banner-content button:hover {
+  background-color: #5D3C62; /* Muted purple */
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .promo-banner {
+    flex-direction: column;
+  }
+
+  .promo-banner img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .banner-content {
+    padding: 1.2rem;
+  }
+
+  .banner-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .banner-content p {
+    font-size: 0.95rem;
+  }
+
+  .banner-content span {
+    font-size: 1.2rem;
+    margin: 2rem 0;
+  }
+
+  .banner-content button {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .success-stories h3 {
+    font-size: 1.3rem;
+  }
+
+  .stories {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .story-card {
+    padding: 1.2rem;
+    flex: none;
+    width: 100%;
+  }
+
+  .story-card p {
+    font-size: 0.85rem;
+    margin-bottom: 3rem;
+  }
+
+  .story-card span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-banner {
+    margin-bottom: 1rem;
+  }
+
+  .banner-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .banner-content p {
+    font-size: 0.9rem;
+  }
+
+  .banner-content span {
+    font-size: 1.1rem;
+  }
+
+  .banner-content button {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .success-stories h3 {
+    font-size: 1.2rem;
+  }
+
+  .story-card {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .story-card p {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .story-card span {
+    font-size: 0.8rem;
+  }
+}
+/* sucecss */
+.success-stories {
+  background-color: #DFB6B3; /* Soft beige-pink */
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.success-stories h3 {
+  font-size: 1.5rem;
+  color: #7B456A; /* Deep pinkish-purple */
+  margin-bottom: 1rem;
+}
+
+.stories {
+  display: flex;
+  gap: 1rem;
+}
+
+.story-card {
+  flex: 1;
+  background-color: #FBE4D9; /* Light peach */
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.story-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.story-card p {
+  font-size: 0.9rem;
+  color: #5D3C62; /* Muted purple */
+  margin-bottom: 6rem;
+}
+
+.story-card span {
+  font-size: 0.9rem;
+  color: #9E6496; /* Rich pink */
+  font-weight: bold;
+}
+
+/* Adding hover effect for cards */
+.story-card:hover {
+  background-color: #E393B4; /* Soft pink */
+  transform: scale(1.03);
+  transition: all 0.3s ease-in-out;
+}
+
+  </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+          <a href="index.html">
+            <img src="rlogo.png" alt="Logo">
+          </a>
+        </div>
+        
+        <div class="menu-toggle" onclick="toggleMobileMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul class="nav-menu">
+          <li class="dropdown">
+              <a href="#">SKIN</a>
+              <ul class="dropdown-menu">
+                  <li class="column">
+                      <h4>BROWSE BY CONCERNS</h4>
+                      <a href="#">Acne Scars</a>
+                      <a href="#">Aging, Fine Lines & Wrinkles</a>
+                      <a href="#">Skin Tanning</a>
+                      <a href="#">Hyper-Pigmentation</a>
+                      <a href="#">Feature Enhancement</a>
+                  </li>
+                  <li class="column">
+                      <h4>BROWSE BY TREATMENT</h4>
+                      <a href="#">UnWrinkle GFC Face</a>
+                      <a href="#">Advanced Microneedling</a>
+                      <a href="#">Laser Toning</a>
+                      <a href="#">Fillers</a>
+                      <a href="#">Forma RF Skin Tightening</a>
+                  </li>
+                  <li class="column">
+                      <h4>MEDI-FACIALS & PEELS</h4>
+                      <a href="#">Hydrafacial</a>
+                      <a href="#">Carbon Facial</a>
+                      <a href="#">Zo-Obagi Hello Bright Facial</a>
+                      <a href="#">Oxybright Facial</a>
+                      <a href="#">Anti Scar Peel</a>
+                  </li>
+              </ul>
+          </li>
+      
+          <li class="dropdown">
+              <a href="laser.html">LASER</a>
+              <ul class="dropdown-menu">
+                  <li class="column">
+                      <h3>MOST POPULAR</h3>
+                      <a href="#">Full Body Laser Hair Removal for women
+                       
+                        </a>
+                      <a href="#">Full Body Laser Hair Removal Men</a>
+                      <a href="#">Laser Hair Removal at home</a>
+                  </li>
+                  <li class="column">
+                    <h4>SPECIFIC BODY PARTS</h4>
+                    <a href="#">Beard Shaping </a>
+                    <a href="#">Face - Laser Hair Removal</a>
+                    <a href="#">Upper Body - Laser Hair Removal</a>
+                    <a href="#">Stomach - Laser Hair Removal</a>
+                    <a href="#">Legs - Laser Hair Removal</a>
+                    <a href="#">Chin - Laser Hair Removal</a>
+                    <a href="#">Chest - Laser Hair Removall</a>
+                    <a href="#">Arms - Laser Hair Removal</a>
+                    <a href="#">Bikini - Laser Hair Removal</a>
+                    <a href="#">Underarm - Laser Hair Removal</a>
+                </li>
+              </ul>
+          </li>
+      
+          <li class="dropdown">
+              <a href="#">BODY</a>
+              <ul class="dropdown-menu">
+                  <li class="column">
+                      <h4 style="font-size: .9rem;
+      font-weight: 600;">BROWSE BY CONCERNS</h4>
+                      <a href="#">Weight Management
+                       
+                        </a>
+                      <a href="#"> Fat Loss</a>
+                      <!-- <a href="#">Body Option 3</a> -->
+                  </li>
+                  <li class="column">
+                    <h4>BROWSE BY TREATMENT</h4>
+                    <a href="#">Body Skin Tightening</a>
+                    <a href="#"> Forma RF Skin Tightening</a>
+                    <a href="#">EMS Muscle Toning with RF</a>
+                    <a href="#">Weight Management Program</a>
+                    <a href="#">HIFU</a>
+                    
+                </li>
+              </ul>
+          </li>
+      
+          <li class="dropdown">
+              <a href="#">IV-Drip</a>
+              <ul class="dropdown-menu">
+                  <li class="column">
+                      <h4>IV-Drip Options</h4>
+                      <a href="#">IV-Drip Option 1</a>
+                      <a href="#">IV-Drip Option 2</a>
+                      <a href="#">IV-Drip Option 3</a>
+                  </li>
+                  <li class="column">
+                    <h3>IV-Drip Options</h3>
+                    <a href="#">IV-Drip Option 1</a>
+                    <a href="#">IV-Drip Option 2</a>
+                    <a href="#">IV-Drip Option 3</a>
+                </li>
+              </ul>
+          </li>
+      
+      
+          <!-- <li><a href="#">Locations</a></li> -->
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+      </ul>
+      
+        <button class="cta-button">
+          <i class="fas fa-headset"></i>
+          Talk to Us
+        </button>
+        <a href="Book-Appointment.html" class="cta-button book-now">
+          <i class="fas fa-calendar-alt"></i>
+          Book Now
+        </a>
+        
+        
+      </header>
+    </section>
+  
+    <div class="mobile-overlay" id="mobileOverlay">
+      <button class="close-button" onclick="toggleMobileMenu()">✖</button>
+      <a href="#">Benefits of LHR</a>
+      <a href="#">Products</a>
+      <a href="#">Treatments</a>
+      <a href="#">Technology</a>
+      <a href="#">Our Services</a>
+    </div>
+    <section>
+        <h1 class="laser-treatment-section-headings">Full Body Laser Hair Removal for Women</h1>
+    </section>
+    <section class="laser-treatment-section">
+        <div class="laser-treatment-image-container">
+          <img src="full-body.webp" alt="Laser Hair Removal Treatment">
+        </div>
+        <div class="laser-treatment-content-wrapper">
+          <!-- <h1 class="laser-treatment-section-heading">Full Body Laser Hair Removal for Women</h1> -->
+          <p class="laser-treatment-subheading">GUARANTEED RESULTS · COST EFFECTIVE · SAFE & SMOOTH</p>
+          <p class="laser-treatment-description">
+            A convenient treatment to control areas such as the legs, arms, underarms, bikini line, face, back, and abdomen, providing long-lasting results and smoother skin. Multiple sessions may be required for optimal reduction, offering women a convenient and effective solution for hair removal across the entire body.
+          </p>
+    
+          <div class="laser-treatment-info-grid">
+            <div class="laser-treatment-info-card">
+              <img src="Patch_test.webp" alt="Patch Test Icon">
+              <p>Patch Test Mandatory</p>
+            </div>
+            <div class="laser-treatment-info-card">
+              <img src="path-to-your-icon/age-icon.png" alt="Age Icon">
+              <p>Age</p>
+            </div>
+            <div class="laser-treatment-info-card">
+              <img src="path-to-your-icon/skin-types-icon.png" alt="Skin Types Icon">
+              <p>Suitable For All Skin Types</p>
+            </div>
+            <div class="laser-treatment-info-card">
+              <img src="path-to-your-icon/gender-icon.png" alt="Gender Icon">
+              <p>Gender</p>
+            </div>
+            <div class="laser-treatment-info-card">
+              <img src="path-to-your-icon/sessions-icon.png" alt="Sessions Icon">
+              <p>Sessions</p>
+            </div>
+            
+          </div>
+          <div class="target-areas">
+            <h3>Target Areas</h3>
+            <p>Full Face, Arms, Legs, Chest, Back, Bikini, Underarms</p>
+          </div>
+    
+          <div class="laser-treatment-buttons">
+            <button class="call-now-btn">Call Us Now</button>
+            <a href="Book-Appointment.html" class="book-appointment-btn">Book Appointment</a>
+            
+          </div>
+        </div>
+      </section>
+      <h1 class="laser-treatment-section-heading">The Science of Full Body Laser Hair Removal Treatment</h1>
+
+      <section class="laser-treatment-laser-treatment-section">
+        
+        <div class="laser-treatment-scroll-container">
+            <div class="laser-treatment-step-card">
+                <div class="laser-treatment-step-card-content">
+                    <img src="bf.webp" alt="Step 1">
+                </div>
+            </div>
+            <div class="laser-treatment-step-card">
+                <div class="laser-treatment-step-card-content">
+                    <img src="process2.webp" alt="Step 2">
+                </div>
+            </div>
+            <div class="laser-treatment-step-card">
+                <div class="laser-treatment-step-card-content">
+                    <img src="step1.webp" alt="Step 3">
+                </div>
+            </div>
+            <div class="laser-treatment-step-card">
+                <div class="laser-treatment-step-card-content">
+                    <img src="step2.webp" alt="Step 4">
+                </div>
+            </div>
+            <div class="laser-treatment-step-card">
+                <div class="laser-treatment-step-card-content">
+                    <img src="step3.webp" alt="Step 5">
+                </div>
+            </div>
+            <div class="laser-treatment-step-card">
+                <div class="laser-treatment-step-card-content">
+                    <img src="step4.webp" alt="Step 5">
+                </div>
+            </div>
+            <div class="laser-treatment-step-card">
+                <div class="laser-treatment-step-card-content">
+                    <img src="step5.webp" alt="Step 5">
+                </div>
+            </div>
+            <div class="laser-treatment-step-card">
+                <div class="laser-treatment-step-card-content">
+                    <img src="areas.webp" alt="Step 5">
+                </div>
+            </div>
+            <div class="laser-treatment-step-card">
+                <div class="laser-treatment-step-card-content">
+                    <img src="results.webp" alt="Step 5">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<div class="laser-treatment">
+    <h2>Claims of Full Body Laser Hair Removal Treatment</h2>
+    <div class="icons-container">
+      <div class="icon">
+        <img src="icon1.png" alt="FDA Approved">
+        <p>FDA Approved</p>
+      </div>
+      <div class="icon">
+        <img src="icon2.png" alt="Painless Technology">
+        <p>Painless Technology</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="laser-treatment">
+    <h2>Benefits of Full Body Laser Hair Removal Treatment</h2>
+    <div class="benefits-container">
+      <div class="benefit">
+        <img src="clock.png" alt="Convenient ">
+        <p class="benefit-title">Convenient and Time-Saving</p>
+      </div>
+      <div class="benefit">
+        <img src="ingrown.png" alt="No More Ingrown Hair">
+        <p class="benefit-title">No More Ingrown Hair</p>
+      </div>
+      <div class="benefit">
+        <img src="reduction.png" alt="Up to 90% Hair Reduction">
+        <p class="benefit-title">Up to 90% Hair Reduction</p>
+      </div>
+      <div class="benefit">
+        <img src="hourglass.png" alt="Long Lasting Result">
+        <p class="benefit-title">Long Lasting Result</p>
+      </div>
+    </div>
+  </div>
+  <section class="laser-treatments-section">
+    <!-- <div class="promo-banner">
+      <div class="banner-content">
+        <h2>Laser Treatment</h2>
+        <p>Get Free Consultation</p>
+        <span>UPTO <strong>40% OFF</strong></span>
+        <button>Claim Now</button>
+      </div>
+      <img src="your-banner-image.jpg" alt="Laser Treatment Banner">
+    </div> -->
+    <div class="hot-deals-ad" style="border-radius: 10px;">
+        <!-- <h1 class="deals-title-ad">Hot Deals</h1> -->
+        <div class="deals-grid-ad">
+            <div class="deal-card-ad">
+                <img src="deal1.png" alt="Deal 1" class="deal-image-ad">
+                <div class="deal-content-ad">
+                    <h2 class="deal-heading-ad">Slimming Therapies</h2>
+                    <!-- <p class="deal-subheading-ad">Get Free Consultation</p> -->
+                    <!-- <p class="deal-off-ad">UPTO <span>50% OFF</span></p> -->
+                    <a href="Book-Appointment.html" class="deal-button-ad">Claim Now</a>
+                    
+                </div>
+                <div class="deal-tag-ad">FREE TRIAL</div>
+            </div>
+            <div class="deal-card-ad">
+                <img src="deal2.png" alt="Deal 2" class="deal-image-ad">
+                <div class="deal-content-ad">
+                    <h2 class="deal-heading-ad">Dermat Treatment</h2>
+                    <!-- <p class="deal-subheading-ad">Get Free Consultation</p> -->
+                    <!-- <p class="deal-off-ad">UPTO <span>40% OFF</span></p> -->
+                    <!-- <button class="deal-button-ad">Claim Now</button> -->
+                    <a href="Book-Appointment.html" class="deal-button-ad">Claim Now</a>
+                </div>
+                <div class="deal-tag-ad">BUT 1 GET 1 FREE</div>
+            </div>
+        </div>
+        <button class="see-more-button-ad">See More</button>
+    </div>
+  
+    <div class="success-stories">
+      <h3>Success Stories of Full Body Laser Hair Removal Treatment</h3>
+      <div class="stories">
+        <div class="story-card">
+          <img src="your-image1.jpg" alt="Story 1">
+          <p>
+            I had always struggled with unwanted hair and was skeptical about trying laser hair reduction.
+            However, this service proved to be a game-changer for me. The process was smooth and the results
+            were good.
+          </p>
+          <span>Aashvi Taneja, Delhi</span>
+        </div>
+        <div class="story-card">
+          <img src="your-image2.jpg" alt="Story 2">
+          <p>
+            After years of waxing and shaving, I decided to give laser hair reduction a try. It was one of the
+            best decisions I’ve made. The treatment was quick and comfortable, and the staff made me feel at ease.
+          </p>
+          <span>Jasmine, Delhi</span>
+        </div>
+        <div class="story-card">
+          <img src="your-image3.jpg" alt="Story 3">
+          <p>
+            VLCC’s laser hair reduction has truly transformed my life. The convenience of not having to worry
+            about constant hair removal has been liberating. I’ve recommended VLCC to all my friends.
+          </p>
+          <span>Priya</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <img src="rlogo2.png" alt="Bodycraft Logo">
+            <p>SALON . SKIN . CLINIC . SPA</p>
+        </div>
+        <div class="footer-right">
+            <ul>
+                <li><a href="#">Hair Salon</a></li>
+                <li><a href="#">Spa & Wellness</a></li>
+                <li><a href="#">Skin Care Services</a></li>
+                <li><a href="#">Personal Grooming Services</a></li>
+                <li><a href="#">Bridal Services</a></li>
+                <li><a href="#">Nail Salon</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Bodycraft Skin Care Clinic</a></li>
+                <li><a href="#">Bodycraft Hair Treatment Clinic</a></li>
+                <li><a href="#">Bodycraft Anti-Aging Treatment Clinic</a></li>
+                <li><a href="#">Bodycraft Cosmetic Treatment Clinic</a></li>
+                <li><a href="#">Bodycraft Body Clinic</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Locations</a></li>
+                <li><a href="#">Mumbai</a></li>
+                <li><a href="#">Bangalore</a></li>
+                <li><a href="#">Gurgaon</a></li>
+                <li><a href="#">Own a Franchise</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Refer a Friend</a></li>
+                <li><a href="#">Packages</a></li>
+                <li><a href="#">Gift Card</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">About Us - Clinic</a></li>
+                <li><a href="#">About Us - Salon</a></li>
+                <li><a href="#">Book an Appointment</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+            </ul>
+            <div class="footer-social">
+                <h3>Get Social</h3>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+<script>
+    // Observe each h1 and p
+textElements.forEach(text => {
+  observer.observe(text);
+});
+
+
+
+  
+    function toggleMobileMenu() {
+      const overlay = document.getElementById('mobileOverlay');
+      overlay.classList.toggle('show');
+    }
+    document.getElementById("whatsappForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const location = document.getElementById("location").value.trim();
+
+  // Construct the professional WhatsApp message
+  const message = `Hello RareSkin,%0A%0AI am interested in learning more about your services. Here are my details:%0A%0A- Name: ${name}%0A- Phone Number: ${phone}%0A- Preferred Clinic Location: ${location}%0A%0AKindly reach out to me with further information. Looking forward to your response.%0A%0AThank you!`;
+
+  const whatsappNumber = "9182830417"; // Update this to the desired WhatsApp number
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+  // Open WhatsApp with the pre-defined message
+  window.open(whatsappURL, "_blank");
+});
+    
+</script>
+</body>
+</html>

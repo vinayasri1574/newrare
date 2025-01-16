@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realistic Kangaroo Jump</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .letters {
+      font-size: 150px;
+      font-weight: bold;
+      display: flex;
+      gap: 30px;
+      position: relative;
+    }
+
+    .letters span {
+      position: relative;
+      display: inline-block;
+      color: grey; /* Default color for letters */
+      transition: color 0.3s ease;
+    }
+
+    .bounce {
+      animation: bounce 0.5s ease;
+    }
+
+    @keyframes bounce {
+      50% {
+        transform: translateY(-30px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    #kangaroo {
+      width: 120px;
+      height: auto;
+      position: absolute;
+      transform-origin: center bottom;
+      transition: transform 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Kangaroo Image -->
+    <img id="kangaroo" src="kangroo.jpeg" alt="Kangaroo">
+    <!-- Letters -->
+    <div class="letters">
+      <span>K</span>
+      <span>A</span>
+      <span>N</span>
+      <span>G</span>
+      <span>A</span>
+      <span>R</span>
+      <span>O</span>
+      <span>O</span>
+    </div>
+  </div>
+
+  <script>
+    const kangaroo = document.getElementById('kangaroo');
+    const letters = document.querySelectorAll('.letters span');
+
+    let index = 0;
+
+    function jumpKangaroo() {
+      if (index < letters.length) {
+        const letter = letters[index];
+        const rect = letter.getBoundingClientRect();
+        const containerRect = document.querySelector('.container').getBoundingClientRect();
+
+        // Calculate kangaroo's position relative to the container
+        const kangarooX = rect.left - containerRect.left + rect.width / 2 - kangaroo.offsetWidth / 2;
+        const kangarooY = -150; // height of the jump
+
+        // Add the jump effect to the kangaroo image
+        kangaroo.style.transition = "transform 0.5s ease-in-out";
+        kangaroo.style.transform = `translate(${kangarooX}px, ${kangarooY}px) scale(1.2)`;
+
+        // Add bounce effect to the letter after the jump
+        setTimeout(() => {
+          letter.classList.add('bounce');
+        }, 500); // Add bounce after the kangaroo jumps
+
+        // Reset position after the jump
+        setTimeout(() => {
+          kangaroo.style.transition = "transform 0.3s ease-out";
+          kangaroo.style.transform = `translate(${kangarooX}px, 0) scale(1)`; // Reset vertical position to 0
+
+          // Change the color of the letter to blue when the kangaroo lands
+          letter.style.color = 'blue'; // Turn letter blue
+        }, 500);
+
+        // Reset color of the previous letter back to grey
+        if (index > 0) {
+          letters[index - 1].style.color = 'grey'; // Reset the previous letter color to grey
+        }
+
+        // Remove bounce effect after the animation completes
+        setTimeout(() => {
+          letter.classList.remove('bounce');
+        }, 1000);
+
+        // Move to the next letter after a brief pause
+        setTimeout(() => {
+          index++;
+          jumpKangaroo();
+        }, 1000);
+      } else {
+        // Reset the animation to start over
+        index = 0;
+        setTimeout(jumpKangaroo, 1000);
+      }
+    }
+
+    // Start the animation
+    jumpKangaroo();
+  </script>
+</body>
+</html>

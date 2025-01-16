@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menu with Animation</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* Header Styling */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      background-color: #ffffff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Logo */
+    .logo img {
+      height: 50px;
+    }
+
+    /* Navigation Menu */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav-menu ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-menu ul li {
+      position: relative;
+    }
+
+    .nav-menu ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      text-transform: capitalize;
+      font-size: 16px;
+      padding: 10px 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu ul li a:hover {
+      color: #ff6600;
+    }
+
+    /* Add spacing between IV Drips and Our Locations */
+    .nav-menu ul li.iv-drips {
+      margin-right: 40px; /* Adjust spacing as needed */
+    }
+
+    /* Dropdown Menu */
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      max-height: 0;
+      padding: 0;
+      opacity: 0;
+      border-radius: 5px;
+      transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+      z-index: 1000;
+    }
+
+    .nav-menu ul li:hover .dropdown-content {
+      max-height: 200px; /* Adjust according to your dropdown content */
+      opacity: 1;
+      padding: 10px 0;
+    }
+
+    .dropdown-content ul {
+      list-style: none;
+    }
+
+    .dropdown-content ul li {
+      padding: 8px 20px;
+    }
+
+    .dropdown-content ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .dropdown-content ul li a:hover {
+      color: #ff6600;
+    }
+
+    /* Angle-Down Icon */
+    .nav-menu ul li a .angle-down {
+      margin-left: 5px;
+      font-size: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-menu ul li:hover a .angle-down {
+      transform: rotate(180deg);
+    }
+
+    /* CTA Button */
+    .cta-button {
+      background-color: #ff6600;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e65500;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <!-- Logo Section -->
+    <div class="logo">
+      <a href="#">
+        <img src="rlogo.png" alt="Logo">
+      </a>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+      <ul>
+        <li>
+          <a href="#">Laser <span class="angle-down">▼</span></a>
+          <div class="dropdown-content">
+            <ul>
+              <li><a href="#">Acne Scars</a></li>
+              <li><a href="#">Fine Lines & Wrinkles</a></li>
+              <li><a href="#">Skin Tanning</a></li>
+              <li><a href="#">Hyper-Pigmentation</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">Skin <span class="angle-down">▼</span></a>
+          <div class="dropdown-content">
+            <ul>
+              <li><a href="#">GFC Face</a></li>
+              <li><a href="#">Laser Toning</a></li>
+              <li><a href="#">Fillers</a></li>
+              <li><a href="#">Skin Tightening</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li>
+          <a href="#">Body <span class="angle-down">▼</span></a>
+          <div class="dropdown-content">
+            <ul>
+              <li><a href="#">Hydrafacial</a></li>
+              <li><a href="#">Carbon Facial</a></li>
+              <li><a href="#">Glow Peel</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="iv-drips"><a href="#">IV-Drips</a></li>
+        <li><a href="#">Locations</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+
+    <!-- Call to Action Button -->
+    <a href="#" class="cta-button">Book Appointment</a>
+  </header>
+</body>
+</html>

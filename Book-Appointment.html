@@ -176,42 +176,145 @@ h1.active, p.active {
 
 </style>
 <body>
-    <header class="header">
-      <div class="logo">
-        <a href="index.html">
-          <img src="rlogo.png" alt="Logo">
-        </a>
-      </div>
-      
-      <div class="menu-toggle" onclick="toggleMobileMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="#">Benefits of LHR</a></li>
-        <li>
-          <a href="#">Products</a>
-          <ul class="dropdown">
-            <li><a href="#">Product 1</a></li>
-            <li><a href="#">Product 2</a></li>
-            <li><a href="#">Product 3</a></li>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="rlogo.png" alt="Logo">
+      </a>
+    </div>
+    
+    <div class="menu-toggle" onclick="toggleMobileMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="nav-menu">
+      <li class="dropdown">
+          <a href="#">SKIN</a>
+          <ul class="dropdown-menu">
+              <li class="column">
+                  <h4>BROWSE BY CONCERNS</h4>
+                  <a href="#">Acne Scars</a>
+                  <a href="#">Aging, Fine Lines & Wrinkles</a>
+                  <a href="#">Skin Tanning</a>
+                  <a href="#">Hyper-Pigmentation</a>
+                  <a href="#">Feature Enhancement</a>
+              </li>
+              <li class="column">
+                  <h4>BROWSE BY TREATMENT</h4>
+                  <a href="#">UnWrinkle GFC Face</a>
+                  <a href="#">Advanced Microneedling</a>
+                  <a href="#">Laser Toning</a>
+                  <a href="#">Fillers</a>
+                  <a href="#">Forma RF Skin Tightening</a>
+              </li>
+              <li class="column">
+                  <h4>MEDI-FACIALS & PEELS</h4>
+                  <a href="#">Hydrafacial</a>
+                  <a href="#">Carbon Facial</a>
+                  <a href="#">Zo-Obagi Hello Bright Facial</a>
+                  <a href="#">Oxybright Facial</a>
+                  <a href="#">Anti Scar Peel</a>
+              </li>
           </ul>
-        </li>
-        <li><a href="#">Treatments</a></li>
-        <li><a href="#">Technology</a></li>
-        <li><a href="#">Our Services</a></li>
-      </ul>
-      <button class="cta-button">
-        <i class="fas fa-headset"></i>
-        Talk to Us
-      </button>
-      <button class="cta-button book-now">
-        <i class="fas fa-calendar-alt"></i>
-        Book Now
-      </button>
-    </header>
-  </section>
+      </li>
+  
+      <li class="dropdown">
+          <a href="laser.html">LASER</a>
+          <ul class="dropdown-menu">
+              <li class="column">
+                  <h3>MOST POPULAR</h3>
+                  <a href="#">Full Body Laser Hair Removal for women
+                   
+                    </a>
+                  <a href="#">Full Body Laser Hair Removal Men</a>
+                  <a href="#">Laser Hair Removal at home</a>
+              </li>
+              <li class="column">
+                <h4>SPECIFIC BODY PARTS</h4>
+                <a href="#">Beard Shaping </a>
+                <a href="#">Face - Laser Hair Removal</a>
+                <a href="#">Upper Body - Laser Hair Removal</a>
+                <a href="#">Stomach - Laser Hair Removal</a>
+                <a href="#">Legs - Laser Hair Removal</a>
+                <a href="#">Chin - Laser Hair Removal</a>
+                <a href="#">Chest - Laser Hair Removall</a>
+                <a href="#">Arms - Laser Hair Removal</a>
+                <a href="#">Bikini - Laser Hair Removal</a>
+                <a href="#">Underarm - Laser Hair Removal</a>
+            </li>
+          </ul>
+      </li>
+  
+      <li class="dropdown">
+          <a href="#">BODY</a>
+          <ul class="dropdown-menu">
+              <li class="column">
+                  <h4 style="font-size: .9rem;
+  font-weight: 600;">BROWSE BY CONCERNS</h4>
+                  <a href="#">Weight Management
+                   
+                    </a>
+                  <a href="#"> Fat Loss</a>
+                  <!-- <a href="#">Body Option 3</a> -->
+              </li>
+              <li class="column">
+                <h4>BROWSE BY TREATMENT</h4>
+                <a href="#">Body Skin Tightening</a>
+                <a href="#"> Forma RF Skin Tightening</a>
+                <a href="#">EMS Muscle Toning with RF</a>
+                <a href="#">Weight Management Program</a>
+                <a href="#">HIFU</a>
+                
+            </li>
+          </ul>
+      </li>
+  
+      <li class="dropdown">
+          <a href="#">IV-Drip</a>
+          <ul class="dropdown-menu">
+              <li class="column">
+                  <h4>IV-Drip Options</h4>
+                  <a href="#">IV-Drip Option 1</a>
+                  <a href="#">IV-Drip Option 2</a>
+                  <a href="#">IV-Drip Option 3</a>
+              </li>
+              <li class="column">
+                <h3>IV-Drip Options</h3>
+                <a href="#">IV-Drip Option 1</a>
+                <a href="#">IV-Drip Option 2</a>
+                <a href="#">IV-Drip Option 3</a>
+            </li>
+          </ul>
+      </li>
+  
+  
+      <!-- <li><a href="#">Locations</a></li> -->
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Blog</a></li>
+  </ul>
+  
+    <button class="cta-button">
+      <i class="fas fa-headset"></i>
+      Talk to Us
+    </button>
+    <a href="Book-Appointment.html" class="cta-button book-now">
+      <i class="fas fa-calendar-alt"></i>
+      Book Now
+    </a>
+    
+    
+  </header>
+</section>
+
+<div class="mobile-overlay" id="mobileOverlay">
+  <button class="close-button" onclick="toggleMobileMenu()">✖</button>
+  <a href="#">Benefits of LHR</a>
+  <a href="#">Products</a>
+  <a href="#">Treatments</a>
+  <a href="#">Technology</a>
+  <a href="#">Our Services</a>
+</div>
   <div class="flowers-container">
     <!-- Left Content -->
     <div class="flowers-left">
@@ -268,7 +371,7 @@ h1.active, p.active {
 <div class="footer">
     <div class="footer-content">
         <div class="footer-left">
-            <img src="logo.png" alt="Bodycraft Logo">
+            <img src="rlogo2.png" alt="Bodycraft Logo">
             <p>SALON . SKIN . CLINIC . SPA</p>
         </div>
         <div class="footer-right">
@@ -318,7 +421,7 @@ h1.active, p.active {
     </div>
   </div>
     
-    <script>
+<script>
       
   
     
