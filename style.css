@@ -43,6 +43,19 @@ body {
   right: 0;
   z-index: 10; /* Ensures header stays on top of the video */
 }
+@media (max-width: 1024px) and (min-height: 1366px) {
+  .header {
+    top: 20px;
+    left: 10px;
+    width: 90%;
+    padding: 15px;
+    border-radius: 25px;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+}
 @media screen and (max-width: 768px) {
   .header {
       flex-direction: column; /* Stack the items vertically */
