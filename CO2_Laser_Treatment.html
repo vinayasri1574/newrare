@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RareSkin</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg" href="images/logofav.svg"> 
+  <style>
+    /* Importing Playfair Display font */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+    /* General Reset */
+    
+  </style>
+  
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* body {
+        font-family: 'Poppins';
+      line-height: 1.6;
+      background: linear-gradient(145deg, #0D0321, #5D3C62);
+      color: #FBE4D9;
+      overflow-x: hidden;
+      padding: 20px;
+    } */
+
+    h1, h3 {
+      font-weight: bold;
+    }
+
+    .Skin-Tanning-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-top: 80px;
+      padding: 2rem;
+      /* background: linear-gradient(145deg, #7B456A, #9E6496); */
+      border-radius: 20px;
+      /* box-shadow: 8px 8px 20px #8D7AB6, -8px -8px 20px #E393B4; */
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    .Skin-Tanning-section-headings {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 150px;
+    color: #FBE4D9;
+}
+
+    .Skin-Tanning-image-container {
+      flex: 1.3;
+      perspective: 1000px;
+    }
+
+    .Skin-Tanning-image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transform: scale(1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .Skin-Tanning-image-container img:hover {
+      transform: scale(1.05) rotateY(10deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .Skin-Tanning-content-wrapper {
+      flex: 1.7;
+      padding: 1rem;
+      animation: slideInFromRight 1.2s ease-in-out;
+      margin-top: -60px;
+    }
+
+    .Skin-Tanning-section-heading {
+      font-size: 2.2rem;
+      color: #FBE4D9;
+      margin-bottom: 0.8rem;
+    }
+
+    .Skin-Tanning-subheading {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #E393B4;
+      margin-bottom: 1rem;
+    }
+
+    .Skin-Tanning-description {
+      font-size: 12.5px;
+      margin-bottom: 1.5rem;
+      color: #FBE4D9;
+    }
+
+    .treatable-concerns,
+    .target-areas {
+      margin-bottom: 1.5rem;
+      
+    }
+
+    .treatable-concerns h3,
+    .target-areas h3 {
+      font-size: 1.2rem;
+      color: #DFB6B3;
+      margin-top: 65px;
+      
+    }
+
+    .concern-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: linear-gradient(145deg, #DFB6B3, #FBE4D9);
+      /* padding: 1rem; */
+      border-radius: 12px;
+      font-size: 1rem;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .concern-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .concern-card img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .target-areas p {
+      font-size: 1rem;
+      margin-top: -35px;
+      background-color:#9E6496;
+      border-radius: 10px;
+    }
+
+    .Skin-Tanning-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 90px;
+    }
+
+    .Skin-Tanning-info-card {
+      
+
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.4rem;
+    /* background-color: #f9f9f9; */
+    padding: -0.2rem;
+    border-radius: 8px;
+
+      /* background: linear-gradient(145deg, #9E6496, #7B456A); */
+      /* padding: 1.2rem; */
+      /* border-radius: 15px; */
+      /* box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2); */
+      transition: transform 0.3s ease;
+    }
+
+    .Skin-Tanning-info-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .Skin-Tanning-info-card img {
+      width: 76px;
+      height: 76px;
+    }
+
+    .Skin-Tanning-info-card p {
+      font-size: 1rem;
+      color: #FBE4D9;
+    }
+
+    .Skin-Tanning-buttons {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 85px;
+    }
+
+    .call-now-btn,
+    .book-appointment-btn {
+      padding: 0.8rem 1.6rem;
+      font-size: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .call-now-btn {
+      background: linear-gradient(145deg, #DFB6B3, #FBE4D9);
+      color: #333;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .call-now-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .book-appointment-btn {
+      background: linear-gradient(145deg, #8D7AB6, #9E6496);
+      color: #FBE4D9;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .book-appointment-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .Skin-Tanning-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .Skin-Tanning-section-headings {
+    font-size: 2rem;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .Skin-Tanning-image-container {
+    width: 100%;
+  }
+
+  .Skin-Tanning-content-wrapper {
+    margin-top: 0;
+    padding: 1rem;
+  }
+
+  .Skin-Tanning-section-heading {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .Skin-Tanning-subheading {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .Skin-Tanning-description {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+
+  .treatable-concerns h3,
+  .target-areas h3 {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .concern-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .concern-card img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .target-areas p {
+    font-size: 0.9rem;
+    margin-top: 0;
+    padding: 0.5rem;
+  }
+
+  .Skin-Tanning-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .Skin-Tanning-info-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .Skin-Tanning-info-card p {
+    font-size: 0.9rem;
+  }
+
+  .Skin-Tanning-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .call-now-btn,
+  .book-appointment-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+.tanning-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .tanning-content {
+      flex: 1;
+      margin-right: 20px;
+    }
+    .tanning-content h2 {
+      font-size: 24px;
+      color: #DFB6B3;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .tanning-content h2::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: #9E6496;
+      bottom: -5px;
+      left: 0;
+    }
+    .tanning-content p {
+      margin-bottom: 20px;
+      color: #FBE4D9;
+      margin-bottom: 80px;
+    }
+    .tanning-content ul {
+      list-style: none;
+      padding: 0;
+    }
+    .tanning-content ul li {
+      margin-bottom: 10px;
+      color: #E393B4;
+      font-weight: bold;
+      position: relative;
+      padding-left: 20px;
+    }
+    .tanning-content ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #8c5f2f;
+    }
+    .tanning-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .tanning-image img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    @media (max-width: 768px) {
+      .tanning-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .tanning-content {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+@media (max-width: 480px) {
+  .Skin-Tanning-section-headings {
+    font-size: 1.5rem;
+    margin-top: 80px;
+  }
+
+  .Skin-Tanning-section-heading {
+    font-size: 1.5rem;
+  }
+
+  .Skin-Tanning-subheading {
+    font-size: 0.8rem;
+  }
+
+  .Skin-Tanning-description {
+    font-size: 0.8rem;
+  }
+
+  .concern-card {
+    gap: 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .concern-card img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .Skin-Tanning-info-card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .Skin-Tanning-info-card p {
+    font-size: 0.8rem;
+  }
+
+  .call-now-btn,
+  .book-appointment-btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+
+    
+/* banner */
+    .Skin-Tannings-section {
+  font-family: 'Arial', sans-serif;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.promo-banner {
+  display: flex;
+  background-color: #FBE4D9; /* Light peach */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.promo-banner img {
+  max-width: 50%;
+  object-fit: cover;
+}
+
+.banner-content {
+  padding: 1rem;
+  flex: 1;
+}
+
+.banner-content h2 {
+  color: #7B456A; /* Deep pinkish-purple */
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner-content p {
+  font-size: 1rem;
+  color: #5D3C62; /* Muted purple */
+}
+
+.banner-content span {
+  display: block;
+  font-size: 1.5rem;
+  margin: rem 0;
+  color: #E393B4; /* Soft pink */
+}
+
+.banner-content strong {
+  color: #9E6496; /* Rich pink */
+}
+
+.banner-content button {
+  padding: 0.8rem 1.2rem;
+  background-color: #7B456A; /* Deep pinkish-purple */
+  border: none;
+  color: #FBE4D9; /* Light peach */
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.banner-content button:hover {
+  background-color: #5D3C62; /* Muted purple */
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .promo-banner {
+    flex-direction: column;
+  }
+
+  .promo-banner img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .banner-content {
+    padding: 1.2rem;
+  }
+
+  .banner-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .banner-content p {
+    font-size: 0.95rem;
+  }
+
+  .banner-content span {
+    font-size: 1.2rem;
+    margin: 2rem 0;
+  }
+
+  .banner-content button {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .success-stories h3 {
+    font-size: 1.3rem;
+  }
+
+  .stories {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .story-card {
+    padding: 1.2rem;
+    flex: none;
+    width: 100%;
+  }
+
+  .story-card p {
+    font-size: 0.85rem;
+    margin-bottom: 3rem;
+  }
+
+  .story-card span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-banner {
+    margin-bottom: 1rem;
+  }
+
+  .banner-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .banner-content p {
+    font-size: 0.9rem;
+  }
+
+  .banner-content span {
+    font-size: 1.1rem;
+  }
+
+  .banner-content button {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .success-stories h3 {
+    font-size: 1.2rem;
+  }
+
+  .story-card {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .story-card p {
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .story-card span {
+    font-size: 0.8rem;
+  }
+}
+/* sucecss */
+.success-stories {
+  background-color: #DFB6B3; /* Soft beige-pink */
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.success-stories h3 {
+  font-size: 1.5rem;
+  color: #7B456A; /* Deep pinkish-purple */
+  margin-bottom: 1rem;
+}
+
+.stories {
+  display: flex;
+  gap: 1rem;
+}
+
+.story-card {
+  flex: 1;
+  background-color: #FBE4D9; /* Light peach */
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.story-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.story-card p {
+  font-size: 0.9rem;
+  color: #5D3C62; /* Muted purple */
+  margin-bottom: 6rem;
+}
+
+.story-card span {
+  font-size: 0.9rem;
+  color: #9E6496; /* Rich pink */
+  font-weight: bold;
+}
+
+/* Adding hover effect for cards */
+.story-card:hover {
+  background-color: #E393B4; /* Soft pink */
+  transform: scale(1.03);
+  transition: all 0.3s ease-in-out;
+}
+.tanning2-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .tanning2-image {
+      flex: 1;
+      margin-right: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .tanning2-image img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .tanning2-content {
+      flex: 1;
+    }
+    .tanning2-content h2 {
+      font-size: 24px;
+      color: #DFB6B3;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .tanning2-content h2::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: #9E6496;
+      bottom: -5px;
+      left: 0;
+    }
+    .tanning2-content p {
+      margin-bottom: 20px;
+      color: #FBE4D9;
+    }
+    .tanning2-content ul {
+      list-style: none;
+      padding: 0;
+    }
+    .tanning2-content ul li {
+      margin-bottom: 10px;
+      color: #E393B4;
+      font-weight: bold;
+      position: relative;
+      padding-left: 20px;
+    }
+    .tanning2-content ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #8c5f2f;
+    }
+    @media (max-width: 768px) {
+      .tanning2-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .tanning2-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+    </style>
+</head>
+<body>
+  <!-- Hero Section -->
+ 
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="rlogo.png" alt="Logo">
+        </a>
+      </div>
+      
+      <div class="menu-toggle" onclick="toggleMobileMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="nav-menu">
+        <li class="dropdown">
+            <a href="#">SKIN</a>
+            <ul class="dropdown-menu">
+                <li class="column">
+                    <h4>BROWSE BY CONCERNS</h4>
+                    <a href="Hydrafacial.html">Acne Scars</a>
+                    <a href="aging.html">Aging, Fine Lines & Wrinkles</a>
+                    <a href="skintanning.html">Skin Tanning</a>
+                    <a href="Hyper-Pigmentation.html">Hyper-Pigmentation</a>
+                    <a href="Feature Enhancement.html">Feature Enhancement</a>
+                </li>
+                <li class="column">
+                    <h4>BROWSE BY TREATMENT</h4>
+                    <a href="UnWrinkle GFC Face.html">UnWrinkle GFC Face</a>
+                    <a href="Advanced_Microneedling.html">Advanced Microneedling</a>
+                    <a href="Laser_Toning.html">Laser Toning</a>
+                    <a href="Fillers.html">Fillers</a>
+                    <a href="Forma_RF_Skin_Tightening.html">Forma RF Skin Tightening</a>
+                    <a href="CO2_Laser_Treatment.html">CO2 Laser Treatment</a>
+                    <a href="iv-glutathione.html">Glow Drips (IV Infusion)</a>
+                    <a href="Skin_Boosters.html">Skin Boosters</a>
+                    <a href="ThreadLift.html">ThreadLift</a>
+
+
+                    
+                </li>
+                <li class="column">
+                    <h4>MEDI-FACIALS & PEELS</h4>
+                    <a href="Hydrafacial.html">Hydrafacial</a>
+                    <a href="Carbon_Facial.html">Carbon Facial</a>
+                    <a href="Oxybright_Facial.html">Oxybright Facial</a>
+                    <a href="Anti_scarpeel.html">Anti Scar Peel</a>
+                    <a href="Fire_and_Ice_Facial.html">Fire and Ice Facial</a>
+                    <a href="untanglowpeel.html">UnTan Glow Peel</a>
+                    <a href="untint.html">UnTint Pigmentation Peel</a>
+                    <a href="undereyepeel.html">Under Eye Peel</a>
+                    <a href="antiagingpeel.html">Anti-Aging Peel</a>
+                    <a href="blackpeel.html">Black Peel</a>
+            
+                </li>
+            </ul>
+        </li>
+    
+        <li class="dropdown">
+            <a href="laser.html">LASER</a>
+            <ul class="dropdown-menu">
+                <li class="column">
+                    <h3>MOST POPULAR</h3>
+                    <a href="Full Body Laser Hair Removal.html">Full Body Laser Hair Removal for women
+                     
+                      </a>
+                    <a href="#">Full Body Laser Hair Removal Men</a>
+                    <a href="#">Laser Hair Removal at home</a>
+                </li>
+                <li class="column">
+                  <h4>SPECIFIC BODY PARTS</h4>
+                  <a href="#">Beard Shaping </a>
+                  <a href="#">Face - Laser Hair Removal</a>
+                  <a href="#">Upper Body - Laser Hair Removal</a>
+                  <a href="#">Stomach - Laser Hair Removal</a>
+                  <a href="#">Legs - Laser Hair Removal</a>
+                  <a href="#">Chin - Laser Hair Removal</a>
+                  <a href="#">Chest - Laser Hair Removall</a>
+                  <a href="#">Arms - Laser Hair Removal</a>
+                  <a href="#">Bikini - Laser Hair Removal</a>
+                  <a href="#">Underarm - Laser Hair Removal</a>
+              </li>
+            </ul>
+        </li>
+    
+        <li class="dropdown">
+            <a href="#">BODY</a>
+            <ul class="dropdown-menu">
+                <li class="column">
+                    <h4 style="font-size: .9rem;
+    font-weight: 600;">BROWSE BY CONCERNS</h4>
+                    <a href="cryolipolysis.html">Weight Management
+                     
+                      </a>
+                    <a href="#"> Fat Loss</a>
+                    <!-- <a href="#">Body Option 3</a> -->
+                </li>
+                <li class="column">
+                  <h4>BROWSE BY TREATMENT</h4>
+                  <a href="bodyskintighhtening.html">Body Skin Tightening</a>
+                  <a href="Forma_RF_Skin_Tightening.html"> Forma RF Skin Tightening</a>
+                  <a href="emsmuscle.html">EMS Muscle Toning with RF</a>
+                  <a href="cryolipolysis.html">Weight Management Program</a>
+                  <a href="hifu.html">HIFU</a>
+                  
+              </li>
+            </ul>
+        </li>
+    
+        <li class="dropdown">
+            <a href="#">IV-Drip</a>
+            <ul class="dropdown-menu">
+                <li class="column">
+                    <h4>IV-Drip Options</h4>
+                    <a href="GlamourDrip.html">Glamour Drip</a>
+                    <a href="Renew.html">Renew Drip</a>
+                    <a href="Radiancedrip.html">Radiance Drip </a>
+                    <a href="refuel.html">Refuel Drip</a>
+                    <a href="Reactivatedrip.html">Reactivate Drip </a>
+                    
+                </li>
+                <li class="column">
+                  <h3>IV-Drip Options</h3>
+                  <a href="Restoredrip.html">Restore Drip</a>
+                  <a href="shrinkdrip.html">Shrink Drip</a>
+                  <a href="Fitboosdrip.html">Fit Boost Drip</a>
+                  <a href="Bouncebackdrip.html">Bounce Back Drip</a>
+                  <a href="megaboostdrip.html">Mega Boost </a>
+              </li>
+            </ul>
+        </li>
+    
+    
+        <!-- <li><a href="#">Locations</a></li> -->
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    </ul>
+    
+      <button class="cta-button">
+        <i class="fas fa-headset"></i>
+        Talk to Us
+      </button>
+      <a href="Book-Appointment.html" class="cta-button book-now">
+        <i class="fas fa-calendar-alt"></i>
+        Book Now
+      </a>
+      
+      
+    </header>
+  </section>
+
+  <div class="mobile-overlay" id="mobileOverlay">
+    <button class="close-button" onclick="toggleMobileMenu()">✖</button>
+    <a href="Hydrafacial.html">SKIN</a>
+    <a href="Full Body Laser Hair Removal.html">LASER</a>
+    <a href="cryolipolysis.html">BODY</a>
+    <a href="iv-glutathione.html">IV-Drip</a>
+    <a href="#">About us</a>
+    <a href="#">Blog</a>
+  </div>
+  <section>
+    <h1 class="Skin-Tanning-section-headings">CO2 Laser Treatment</h1>
+</section>
+<section class="Skin-Tanning-section">
+    <div class="Skin-Tanning-image-container">
+      <img src="co2lasermain.avif" alt="Laser Hair Removal Treatment">
+    </div>
+    <div class="Skin-Tanning-content-wrapper">
+      <!-- <h1 class="Skin-Tanning-section-heading">Full Body Laser Hair Removal for Women</h1> -->
+      <p class="Skin-Tanning-subheading">Blemish free & Clear Skin</p>
+      <p class="Skin-Tanning-description">
+        Address and enhance a range of skin flaws, including as wrinkles, scars, blemishes, and uneven texture. This cutting-edge laser technology promotes skin renewal, increases collagen formation, and vaporises damaged skin cells.
+        
+        <div class="Skin-Tanning-info-card">
+          <img src="Patch_test.webp" alt="Patch Test Icon">
+          <p>Patch Test Mandatory</p>
+        </div>
+        <div class="Skin-Tanning-info-card">
+          <img src="path-to-your-icon/age-icon.png" alt="Age Icon">
+          <p>Age</p>
+        </div>
+        <div class="Skin-Tanning-info-card">
+          <img src="path-to-your-icon/skin-types-icon.png" alt="Skin Types Icon">
+          <p>Suitable For All Skin Types</p>
+        </div>
+        <div class="Skin-Tanning-info-card">
+          <img src="path-to-your-icon/gender-icon.png" alt="Gender Icon">
+          <p>Gender</p>
+        </div>
+        <div class="Skin-Tanning-info-card">
+          <img src="path-to-your-icon/sessions-icon.png" alt="Sessions Icon">
+          <p>Sessions</p>
+        </div>
+        
+      </div>
+      <div class="target-areas">
+        <h3>Target Areas</h3>
+        <p> Face</p>
+      </div>
+
+      <div class="Skin-Tanning-buttons">
+        <button class="call-now-btn">Call Us Now</button>
+        <a href="Book-Appointment.html" class="book-appointment-btn">Book Appointment</a>
+        
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="tanning2-section">
+    <div class="tanning2-image">
+      <img src="co2laser2.avif" alt="Tan Removal Before and After">
+    </div>
+    <div class="tanning2-content">
+      <h2>What is CO2 Laser Treatment?</h2>
+      <p>
+        The CO2 Laser Treatment is a cutting-edge method of skin resurfacing that uses a carbon dioxide (CO2) laser to carefully remove damaged skin's outer layers, exposing smoother, younger-looking skin underneath. By encouraging the formation of collagen, this therapy enhances the texture, tone, and general appearance of the skin.      </p>
+      <h3 style="margin-top: 60px;color: #9E6496;">Uses of CO2 Laser Treatment</h3>
+      <ul>
+        <li>Fine lines and wrinkles</li>
+        <li>Acne scars and surgical scars</li>
+        <li>Sun damage and age spots</li>
+        <li>Uneven skin tone and texture</li>
+        <li>Enlarged pores</li>
+        <li>Stretch marks</li>
+        <li>Warts and skin tags</li>
+      </ul>
+    </div>
+  </section>
+<section class="tanning-section">
+  <div class="tanning-content">
+    <h2>Technology Behind CO2 Laser Treatment</h2>
+    <p>
+        Short-pulsed light energy or continuously focused light beams are emitted by CO2 lasers to target particular skin regions. The outer layers of the skin are vaporised by the laser light, which promotes the formation of new collagen and elastin fibers—two components necessary for healthy, youthful skin.    <ul>
+      <li>Consultation: A comprehensive consultation is conducted to assess your skin type, concerns, and suitability for the treatment.</li>
+      <li>Preparation: The treatment area is cleaned, and a topical anesthetic is applied to minimize discomfort.
+      </li>
+      <li>Treatment: The CO2 laser device is passed over the targeted area, delivering controlled energy to remove damaged skin layers.</li>
+      <li>Cooling and Soothing: After the treatment, cooling measures and soothing ointments are applied to enhance comfort and promote healing.</li>
+      <li>
+        Aftercare: Detailed aftercare instructions are provided to ensure optimal recovery and results.
+      </li>
+    </ul>          
+    </p>
+    <!-- <h3 style="margin-top: 60px;color: #9E6496;">Concern Areas</h3> -->
+    <ul>
+      
+    </ul>
+  </div>
+  <div class="tanning-image">
+    <img src="co2laser.avif" alt="Tan Removal Before and After">
+  </div>
+</section>
+
+
+<div class="success-stories">
+  <h3>Success Stories of Tan Removal Treatment</h3>
+  <div class="stories">
+    <div class="story-card">
+      <img src="your-image1.jpg" alt="Story 1">
+      <p>
+        I had always struggled with unwanted hair and was skeptical about trying laser hair reduction.
+        However, this service proved to be a game-changer for me. The process was smooth and the results
+        were good.
+      </p>
+      <span>Aashvi Taneja, Delhi</span>
+    </div>
+    <div class="story-card">
+      <img src="your-image2.jpg" alt="Story 2">
+      <p>
+        After years of waxing and shaving, I decided to give laser hair reduction a try. It was one of the
+        best decisions I’ve made. The treatment was quick and comfortable, and the staff made me feel at ease.
+      </p>
+      <span>Jasmine, Delhi</span>
+    </div>
+    <div class="story-card">
+      <img src="your-image3.jpg" alt="Story 3">
+      <p>
+        VLCC’s laser hair reduction has truly transformed my life. The convenience of not having to worry
+        about constant hair removal has been liberating. I’ve recommended VLCC to all my friends.
+      </p>
+      <span>Priya</span>
+    </div>
+  </div>
+</div>
+</section>
+  <!-- footer -->
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <img src="rlogo2.png" alt="Bodycraft Logo">
+            <p>SALON . SKIN . CLINIC . SPA</p>
+        </div>
+        <div class="footer-right">
+            <ul>
+                <li><a href="Full Body Laser Hair Removal.html">Laser Hair Removal</a></li>
+                <li><a href="cryolipolysis.html">Body Contouring Treatments</a></li>
+                <li><a href="Hydrafacial.html">Acne & Scars
+                </a></li>
+                <li><a href="iv-glutathione.html">IV Glow Drips</a></li>
+                <li><a href="hifu.html">HIFU</a></li>
+                
+            </ul>
+            <ul>
+                <li><a href="#"> Skin Care Clinic</a></li>
+                <li><a href="#"> Hair Treatment Clinic</a></li>
+                <li><a href="#"> Anti-Aging Treatment Clinic</a></li>
+                <li><a href="#"> Cosmetic Treatment Clinic</a></li>
+                <li><a href="#"> Body Clinic</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Locations</a></li>
+                <li><a href="#">Mumbai</a></li>
+                <li><a href="#">Bangalore</a></li>
+                <li><a href="#">Gurgaon</a></li>
+                <li><a href="#">Own a Franchise</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Refer a Friend</a></li>
+                <li><a href="#">Packages</a></li>
+                <li><a href="#">Gift Card</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">About Us - Clinic</a></li>
+                <li><a href="#">About Us - Salon</a></li>
+                <li><a href="#">Book an Appointment</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Sitemap</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+            </ul>
+            <div class="footer-social">
+                <h3>Get Social</h3>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            </div>
+        </div>
+    </div>
+  </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+  
+    tabButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to the clicked button
+        button.classList.add('active');
+  
+        // Show/Hide testimonial cards
+        testimonialCards.forEach((card, cardIndex) => {
+          if (index === cardIndex || index === 0) { // Example logic
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+  // WhatsApp Form Submission
+  document.getElementById("whatsappForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+  
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const location = document.getElementById("location").value.trim();
+  
+    // Construct the professional WhatsApp message
+    const message = `Hello RareSkin,%0A%0AI am interested in learning more about your services. Here are my details:%0A%0A- Name: ${name}%0A- Phone Number: ${phone}%0A- Preferred Clinic Location: ${location}%0A%0AKindly reach out to me with further information. Looking forward to your response.%0A%0AThank you!`;
+  
+    const whatsappNumber = "9182830417"; // Update this to the desired WhatsApp number
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+  
+    // Open WhatsApp with the pre-defined message
+    window.open(whatsappURL, "_blank");
+  });
+  
+  document.querySelectorAll(".service-tab").forEach((tab) => {
+    tab.addEventListener("click", (e) => {
+      // Remove "active" class from all tabs
+      document.querySelectorAll(".service-tab").forEach((btn) => btn.classList.remove("active"));
+  
+      // Add "active" class to the clicked tab
+      e.target.classList.add("active");
+  
+      // Get the selected tab
+      const selectedTab = e.target.getAttribute("data-tab");
+  
+      // Hide all content sections
+      document.querySelectorAll(".service-content").forEach((content) => {
+        content.style.display = "none";
+      });
+  
+      // Show the content for the selected tab
+      document.getElementById(selectedTab).style.display = "block";
+    });
+  });
+  // Select all h1 and p elements
+  const textElements = document.querySelectorAll('h1, p');
+  
+  // Set up the Intersection Observer
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Add the active class when the text is visible
+          entry.target.classList.add('active');
+          // Unobserve the element after animation
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2, // Adjust the visibility threshold
+    }
+  );
+  
+  // Observe each h1 and p
+  textElements.forEach(text => {
+    observer.observe(text);
+  });
+  
+  
+  
+    
+      function toggleMobileMenu() {
+        const overlay = document.getElementById('mobileOverlay');
+        overlay.classList.toggle('show');
+      }
+      
+    
+      </script>
+  </body>
+  </html>
